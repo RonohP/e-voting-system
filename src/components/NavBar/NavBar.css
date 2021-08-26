@@ -1,0 +1,12 @@
+.logo-text, .menu-btn, .login-btn{
+    color: #93278F;
+}
+
+.register-btn{
+    background: #93278F;
+    color: #FFFFFF;
+}
+
+.login-btn, .register-btn{
+    border: #93278F solid ;
+}
