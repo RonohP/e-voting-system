@@ -1,11 +1,12 @@
+import { Fragment } from 'react';
 import './App.css';
 import Landing from './pages/Landing';
 
 function App() {
   return (
-    <div className="App">
-      <Landing/>
-    </div>
+    <Fragment className='h-screen'>
+      <Landing />
+    </Fragment>
   );
 }
 
