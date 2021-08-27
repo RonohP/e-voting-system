@@ -5,7 +5,7 @@ import { Link, p } from 'react-router-dom';
 
 function Footer() {
     return (
-      <footer className='footer w-full h-auto absolute inset-x-0 bottom-0 flex flex-row justify-center md:w-full'>
+      <footer className='footer w-full h-auto relative inset-x-0 bottom-0 flex flex-row justify-center md:w-full'>
         <div className='flex flex-col pt-8 pl-6 md:justify-center'>
           <div className='flex'>
             <img className=' w-12 h-11' src={Logo} alt='WTLogo' />
