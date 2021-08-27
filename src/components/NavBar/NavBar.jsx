@@ -5,7 +5,7 @@ import './NavBar.css';
 
 function NavBar() {
     return (
-      <nav className='navbar flex justify-between item- center h-16 w-full pl-8 pr-8 sm:pl-2 md:pl-10 lg:pl-12 md:w-full '>
+      <nav className='navbar flex justify-between item- center mb-10 h-16 w-full sm:pl-2 md:pl-10 lg:pl-12 md:w-full '>
         <Link to='/' className='flex flex-row pt-6'>
           <img src={Logo} alt='WTLogo' className='w-12 h-11' />
           <p className='logo-text inline-block pt-6 pl-1 font-sans font-bold'>
@@ -47,8 +47,8 @@ function NavBar() {
             </Link>
           </button>
           <button className='register-btn border rounded-full py-2 px-8 border-solid'>
-            <Link className='p-4' to='/login'>
-              Register
+            <Link className='p-4' to='/register'>
+              Register as a Voter
             </Link>
           </button>
         </div>
