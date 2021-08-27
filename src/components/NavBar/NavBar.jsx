@@ -47,8 +47,8 @@ function NavBar() {
             </Link>
           </button>
           <button className='register-btn border rounded-full py-2 px-8 border-solid'>
-            <Link className='p-4' to='/login'>
-              Register
+            <Link className='p-4' to='/register'>
+              Register as a Voter
             </Link>
           </button>
         </div>
