@@ -1,0 +1,50 @@
+.stats .title::after {
+  content: 'Track the number of votes and voters with our real-time counter';
+}
+
+.stats .content .circle span {
+  border-radius: 500%;
+  background: #ffff;
+  border: 40px solid transparent;
+  background-repeat: no-repeat;
+  background-origin: content-box, border-box, border-box, border-box, border-box;
+  background-clip: content-box, border-box, border-box, border-box, border-box;
+}
+
+.stats .content .circle {
+  position: relative;
+  border-radius: 500%;
+  border: 40px solid transparent;
+  background-repeat: no-repeat;
+  background-origin: content-box, border-box, border-box, border-box, border-box;
+  background-clip: content-box, border-box, border-box, border-box, border-box;
+}
+
+.stats .content span {
+  left: 110px;
+  top: 85px;
+}
+
+.stats .content .circle.one {
+  background-size: 100% 100%, 100% 100%;
+  background-image: linear-gradient(#ffff, #ffff),
+    linear-gradient(rgba(6, 20, 147, 0.8), rgba(6, 20, 147, 0.8));
+}
+
+.stats .content .circle.two {
+  background-size: 100% 100%, 50% 100%, 50% 100%;
+  background-image: linear-gradient(white, white),
+    linear-gradient(30deg, rgba(35, 135, 81, 0.9), rgba(35, 135, 81, 0.9)),
+    linear-gradient(120deg, rgba(144, 254, 155, 0.5) 20%, rgba(35, 135, 81, 0.9) 3%);
+  background-position: center center, left top, right top;
+  transform: rotate(80deg);
+}
+
+.stats .content .circle.three {
+  background-size: 100% 100%, 50% 100%, 50% 100%;
+  background-image: linear-gradient(white, white),
+    linear-gradient(30deg, #F2FCB3, #F2FCB3),
+    linear-gradient(120deg, #E5E941 20%, #F2FCB3 3%);
+  background-position: center center, left top, right top;
+  transform: rotate(30deg);
+}

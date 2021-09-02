@@ -1,0 +1,79 @@
+.how .title{
+    color: #460D86;
+}
+.how .title::after{
+    color: black;
+    content: 'It’s simple and easy to use in these 3 steps';
+}
+
+.how h3{
+  color: #93278F;  
+}
+
+.timeline{
+    margin-top: 10%;
+}
+
+.timeline .container ul li{
+    border-left: 1px dashed #93278F;
+}
+
+.timeline .container ul li::before{
+    position: absolute;
+    left: -18px;
+    top: -5px;
+    content: ' ';
+    border: 8px solid #93278F;
+    border-radius: 500%;
+    background: #93278F;
+    height: 40px;
+    width: 40px;
+    transition: all 500ms ease-in-out;
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: bold;
+    color: #ffff;
+    box-sizing: border-box;
+    padding: 0 5px;
+    vertical-align: middle;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timeline .container ul li.one::before{
+    content: '1';
+}
+.timeline .container ul li.two::before{
+    content: '2';
+}
+.timeline .container ul li.three::before{
+    content: '3';
+}
+
+.timeline .container ul li:last-child{
+    border-left: 0;
+}
+
+.image-stack{
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.image-stack .image-top{
+    grid-column: 1 / span 12;
+    grid-row: 1;
+    z-index: 1;
+}
+
+.image-stack .image-bottom{
+    grid-column: 4 / -5;
+    grid-row: 1;
+    padding-left: 3.5%;
+    padding-top: 20%;
+}
+
+.image-stack p{
+    font-family: 'Saira Stencil One', cursive;
+    color: #93278F;
+    z-index: 1;
+}

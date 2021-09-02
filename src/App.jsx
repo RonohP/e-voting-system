@@ -1,10 +1,12 @@
+import { Fragment } from 'react';
 import './App.css';
+import Landing from './pages/Landing';
 
 function App() {
   return (
-    <div className="App">
-      <h1>E-Voting System</h1>
-    </div>
+    <Fragment>
+      <Landing />
+    </Fragment>
   );
 }
 
