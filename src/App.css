@@ -2,8 +2,45 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-/* html, body{
-  height:100%;
-} */
+/* Global Styling */
+
+.max-width {
+  max-width: 1300px;
+  padding: 0 80px;
+  margin: auto;
+}
+
+.title::after {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  font-size: 15px;
+  padding: 0 5px;
+  transform: translateX(-50%);
+}
+
+/*style the scrollbar*/
+/* width of the scrollbar*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track (progress bar) of the scrollbar*/
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #ffff;
+  border-radius: 10px;
+}
+
+/* Handle (the draggable scrolling handle)*/
+::-webkit-scrollbar-thumb {
+  background: #93128E;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #300745;
+}

@@ -1,0 +1,61 @@
+.live-res {
+  background-color: #300745;
+  color: #ffffff;
+}
+
+.live-res .title::after {
+  content: '';
+}
+
+.left .chart-div .chart {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(204, 204, 204, 1) -1%,
+      transparent 1%
+    ),
+    linear-gradient(to right, rgba(204, 204, 204, 1) -1%, transparent 1%);
+  background-size: 100% 50px;
+  background-position: left top;
+}
+
+.left .chart-div .chart li {
+  background-image: linear-gradient(
+    to left,
+    rgba(204, 204, 204, 1) -1%,
+    transparent 1%
+  );
+  background-position: right;
+  height: 201px;
+}
+
+.left .chart-div .left-label{
+  transform: rotate(270deg);
+  transform-origin: (0,0);
+  top: 130px;
+  left: 80px;
+}
+
+.left .chart-div .chart span.one {
+  background-color: #ffc7ca;
+}
+
+.left .chart-div .chart span.two {
+  background: #f1fbb7;
+}
+
+.left .chart-div .chart span.three {
+  background: #b8d0ff;
+}
+
+.left .chart-div .chart span.four {
+  background: #e5ffae;
+}
+
+.left .chart-div .chart span.five {
+  background: #a37db6;
+}
+
+.right .candidate-btn{
+  background-color: #FFFFFF;
+  color: #93278F;
+}

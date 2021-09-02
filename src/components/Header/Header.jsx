@@ -30,7 +30,7 @@ function Header() {
             <img
               src={header}
               alt='Header-img'
-              className='h-full p-2 object-cover mr-10'
+              className='h-full object-cover mr-10'
             />
           </div>
         </div>
