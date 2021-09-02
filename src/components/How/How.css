@@ -10,10 +10,6 @@
   color: #93278F;  
 }
 
-.timeline{
-    margin-top: 10%;
-}
-
 .timeline .container ul li{
     border-left: 1px dashed #93278F;
 }

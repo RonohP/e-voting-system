@@ -6,6 +6,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
 import PageNotFound from './pages/PageNotFound';
+import ThankYou from './pages/ThankYou';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route exact path='/home' component={Landing} />
           <Route exact path='/about' component={About} />
           <Route exact path='/contact' component={Contact} />
+          <Route exact path='/thanks' component={ThankYou} />
           <Route exact path='/faq' component={FAQ} />
           <Route exact path='*' component={PageNotFound} />
         </Switch>
