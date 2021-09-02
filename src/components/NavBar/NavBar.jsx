@@ -29,7 +29,7 @@ function NavBar() {
           </svg>
         </div>
         <div className='pr-6 pt-8 md:block hidden'>
-          <Link className='p-4' to='/home'>
+          <Link className='p-4' to='/'>
             Home
           </Link>
           <Link className='p-4' to='/about'>
