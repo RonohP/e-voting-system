@@ -1,0 +1,19 @@
+.features{
+    background-color: #300745;
+    color: #FFFFFF;
+}
+
+.features .title::after{
+    content: 'Secured System that guarantees seamless Elections ';
+}
+
+.union{
+    color: #FFFFFF;
+    font-size: 12.25rem;
+}
+
+.union-in{
+    filter: invert(20%) sepia(100%) saturate(1592%) hue-rotate(280deg) brightness(89%) contrast(95%);
+    z-index: 99;
+    color: #93278F;
+}

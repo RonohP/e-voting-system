@@ -4,7 +4,7 @@ import Landing from './pages/Landing';
 
 function App() {
   return (
-    <Fragment className='h-screen'>
+    <Fragment>
       <Landing />
     </Fragment>
   );
