@@ -34,7 +34,7 @@ function How() {
               </div>
             </div>
             <div className='image w-1/2'>
-              <div className='image-stack grid relative ml-24 mt-48'>
+              <div className='image-stack grid relative ml-16 mt-16'>
                 <div className='image-top'>
                   <img src={cheerful} alt='cheerful-lady' />
                 </div>
