@@ -47,6 +47,10 @@
     content: '3';
 }
 
+.timeline .container ul li.four::before{
+    content: '4';
+}
+
 .timeline .container ul li:last-child{
     border-left: 0;
 }

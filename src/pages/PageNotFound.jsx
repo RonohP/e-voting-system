@@ -3,15 +3,17 @@ import { Fragment } from 'react';
 import fourOfour from '../images/404.svg';
 import {Link} from 'react-router-dom';
 import {BiArrowBack} from 'react-icons/bi';
+import NavBar from '../components/NavBar/NavBar';
 
 function PageNotFound() {
     return (
       <Fragment>
-        <section className='404'>
+        <NavBar />
+        <section className='404 relative h-full align-center w-full'>
           <div className='max-width'>
-            <div className='content my-12 mx-56 text-center align-center'>
-              <img src={fourOfour} alt='404 Page not found' />
-              <p className='mt-10 text-2xl'>
+            <div className='content my-12 mx-auto text-center align-center'>
+              <img src={fourOfour} alt='404 Page not found'className='align-center mx-auto' />
+              <p className='mt-10 text-xl'>
                 The page you are looking for might have been removed, had its
                 name changed or is temporarily unavailable.
               </p>
