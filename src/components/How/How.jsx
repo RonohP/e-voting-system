@@ -8,7 +8,7 @@ function How() {
       <section className='how py-24'>
         <div className='max-width'>
           <h1 className='title relative text-center text-5xl font-medium mb-14 pb-5'>
-            How it works
+            How it works 
           </h1>
           <div className='content flex flex-warp align-center justify-between'>
             <div className='timeline relative mx-auto w-1/2'>
@@ -40,7 +40,7 @@ function How() {
                 </div>
                 <div className='image-bottom'>
                   <img src={frame} alt='frame' className='frame h-64' />
-                  <p className='absolute font-normal text-3xl items-center right-28 top-32'>
+                  <p className='absolute font-normal text-3xl items-center right-32 top-36'>
                     I VOTED
                   </p>
                 </div>
