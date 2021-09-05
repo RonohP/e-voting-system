@@ -92,7 +92,7 @@ const Login = () => {
                             /> 
                             <span className="px-4">Remember Password</span>   
                             <span>
-                            <Link className=' forget-password mx-20 text-right px-20 font-bold' to='/'>
+                            <Link className=' forget-password mx-30 text-right px-20 font-bold' to='/'>
                               Forget Password?
                        
                                  </Link>
