@@ -19,8 +19,8 @@ function About() {
               This voting system was made to improve the voting system of the
               Women techsters University.
               <br />
-              Electing students representatives has been made easy on thia App.
-              With Just few clicks voters are able to vote in their prefferred
+              Electing students representatives has been made easy on the App.
+              With Just few clicks voters are able to vote in their preferred
               candidates.
             </p>
           </div>
@@ -45,9 +45,9 @@ function About() {
                 <div className='absolute mx-10 top-36 p-4'>
                   <h3 className='text-4xl font-bold'>The Idea</h3>
                   <p>
-                    The Alpha team conducted an indepth research and saw the
+                    The Alpha team conducted an in-depth research and saw the
                     need for an online voting system that would speed up
-                    electoral process and help students vote for their preffered
+                    electoral process and help students vote for their preferred
                     candidates
                   </p>
                 </div>

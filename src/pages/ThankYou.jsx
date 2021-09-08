@@ -15,12 +15,12 @@ function ThankYou() {
               Thank You !
             </h1>
             <p className='text-center mt-4 font-normal text-base mx-5'>
-              Your Submission has been recieved, We will be in touch and contact
+              Your Submission has been received, We will be in touch and contact
               you soon.
             </p>
           </div>
           <div className='my-16 mx-auto w-1/2 h-1/2 align-center text-center'>
-            <img src={thankYou} alt='Mail recieved. Thank you' />
+            <img src={thankYou} alt='Mail received. Thank you' />
             <button
               className='back-btn border rounded-full py-1 px-7 border-solid w-3/4 my-2 font-bold inline-block'
               style={{ background: '#93278F', color: '#FFFF' }}

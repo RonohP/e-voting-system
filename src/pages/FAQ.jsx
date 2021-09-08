@@ -45,7 +45,7 @@ function FAQ() {
                     <p className='text-base my-4'>
                       This is an online voting system that speeds up ballot
                       counting process and the vote is counted immediately after
-                      the voter cast their vote in favour of their preffered
+                      the voter cast their vote in favour of their preferred
                       candidate,
                     </p>
                   </li>
@@ -70,7 +70,7 @@ function FAQ() {
                     </h1>
                     <p className='text-base my-4'>
                       The voters choices are kept top secret and the system is
-                      protected and hosted on Microsoft Asia.
+                      protected and hosted on Microsoft Azure.
                     </p>
                   </li>
                 </ul>
