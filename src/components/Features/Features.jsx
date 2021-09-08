@@ -38,7 +38,7 @@ function Features() {
               </div>
               <h3 className='text-xl'>Vote Online</h3>
               <h6 className='text-xs'>
-                With just few clicks, you can vote your preferred candidates
+                With just few clicks, you can for vote your preferred candidates
               </h6>
             </div>
             <div className='column 3 text-center w-4/12 align-center justify-center p-6'>

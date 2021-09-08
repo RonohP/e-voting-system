@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import Logo from '../../images/WTLOGO.png';
 import './NavBar.css';
+import {AiOutlineMenu} from 'react-icons/ai'
 
 function NavBar() {
     return (
@@ -9,24 +10,11 @@ function NavBar() {
         <Link to='/' className='flex flex-row pt-6'>
           <img src={Logo} alt='WTLogo' className='w-12 h-11' />
           <p className='logo-text inline-block pt-6 pl-1 font-sans font-bold'>
-            echsters Universisty
+            echsters University
           </p>
         </Link>
         <div className=' menu-btn px-4 cursor-pointer md:hidden'>
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            className='h-6 w-6'
-            fill='none'
-            viewBox='0 0 24 24'
-            stroke='currentColor'
-          >
-            <path
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              strokeWidth={2}
-              d='M4 6h16M4 12h16M4 18h16'
-            />
-          </svg>
+          <AiOutlineMenu/>
         </div>
         <div className='pr-6 pt-8 md:block hidden'>
           <Link className='p-4' to='/home'>
