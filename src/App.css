@@ -34,7 +34,7 @@
   border-radius: 10px;
 }
 
-/* Handle (the draggable scrolling handle)*/
+/* Handle (the drag scrolling handle)*/
 ::-webkit-scrollbar-thumb {
   background: #93128E;
   border-radius: 10px;

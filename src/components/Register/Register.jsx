@@ -42,7 +42,7 @@ const Register = () => {
                     <Link to='/' className='flex flex-row pt-6'>
                         <img src={Logo} alt='WTLogo' className='w-12 h-11' />
                             <p className='logo-text inline-block pt-6 pl-1 font-sans font-bold'>
-                            echsters Universisty
+                            echsters University
                             </p>
                     </Link>
                 </nav>
@@ -56,7 +56,7 @@ const Register = () => {
                         </h1>
                         <p className='text-left mt-10 font-normal text-lg mx-6'>
                         Register as a voter on the women techsters University 
-                        voting platform to vote in your preffered candidate.
+                        voting platform to vote in your preferred candidate.
                         </p>
                         <div className='p-2'>
                             <form onSubmit={(e) => e.preventDefault()} className='p-2 mx-2'>
@@ -66,7 +66,7 @@ const Register = () => {
                             <input
                             type='number'
                             name='std-id'
-                            placeholder='Stdent ID No.'
+                            placeholder='Student ID No.'
                             id='std-id'
                             className='w-full rounded-full py-3 px-6 border border-solid resize-y my-2'
                             style={{ borderColor: '#93278F' }}
