@@ -10,7 +10,7 @@ function Footer() {
           <div className='flex'>
             <img className=' w-12 h-11' src={Logo} alt='WTLogo' />
             <p className='logo-text inline-block pt-6 pl-1 font-sans font-bold'>
-              echsters Universisty
+              echsters University
             </p>
           </div>
           <p className='font-thin h-16 pt-20'>
@@ -40,7 +40,7 @@ function Footer() {
             18b Oladimeji Alo Street off Freedom Way, Lekki,100001, Lagos State.
           </p>
           <p className='font-thin h-16'>
-            Email: The AlphaTeam@womentchsters.org
+            Email: The AlphaTeam@womentechsters.org
           </p>
           <p className='font-thin h-16'>Phone: (234) 813-275-5220</p>
         </div>

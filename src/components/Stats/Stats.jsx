@@ -14,7 +14,9 @@ function Stats() {
               <span className='text-4xl font-semibold text-center p-8 absolute'>
                 500
               </span>
-              <p className='font-normal text-base'>Number of registered voters</p>
+              <p className='font-normal text-base'>
+                Number of registered voters
+              </p>
             </div>
             <div className=' w-1/3 text-center align-center h-auto my-8 relative'>
               <div className='circle two w-56 h-56 my-6 ml-16'></div>
@@ -25,10 +27,10 @@ function Stats() {
             </div>
             <div className='  w-1/3 text-center align-center h-auto my-8 relative'>
               <div className='circle three w-56 h-56 my-6 ml-16'></div>
-              <span className='text-4xl font-semibold text-center p-8 absolute'>
-                30
+              <span className=' three text-4xl font-semibold text-center p-8 absolute item-center'>
+                5
               </span>
-              <p>Number of registered voters</p>
+              <p>Number of registered Candidates</p>
             </div>
           </div>
         </div>
