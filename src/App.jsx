@@ -10,7 +10,8 @@ import Login from "./components/Login/Login";
 import PageNotFound from "./pages/PageNotFound";
 import ThankYou from "./pages/ThankYou";
 import Terms from "./components/Terms/Terms";
-import ForgotPassword from "./components/NotificationCards/ForgotPassword";
+import ForgotPassword from "./pages/ForgotPassword";
+import MessageSent from "./pages/MessageSent";
 
 function App() {
   return (
@@ -26,12 +27,11 @@ function App() {
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/terms" component={Terms} />
+          <Route exact path="/forgotPassword" component={ForgotPassword} />
+          <Route exact path="/messageSent" component={MessageSent} />
           <Route exact path="*" component={PageNotFound} />
         </Switch>
       </Router>
-      <div>
-        <ForgotPassword />
-      </div>
     </Fragment>
   );
 }
