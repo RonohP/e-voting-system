@@ -6,8 +6,8 @@ import { toast } from 'react-toastify';
 import {Link} from 'react-router-dom';
 import Logo from '../../images/WTLOGO.png';
 import SignUp from '../../images/SignUp.svg';
-import '../NavBar/NavBar.css';
-import '../Footer/Footer.css';
+import '../../components/NavBar/NavBar.css';
+import '../../components/Footer/Footer';
 import './Register.css'
 
 const Register = () => {
