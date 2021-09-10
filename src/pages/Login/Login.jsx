@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import Logo from "../../images/WTLOGO.png";
 import Log from "../../images/Log.svg";
-import "../NavBar/NavBar.css";
+import "../../components/NavBar/NavBar";
 import "./Login.css";
 
 const Login = () => {
@@ -27,7 +27,7 @@ const Login = () => {
           <Link to="/" className="flex flex-row pt-6">
             <img src={Logo} alt="WTLogo" className="w-12 h-11" />
             <p className="logo-text inline-block pt-6 pl-1 font-sans font-bold">
-              echsters Universisty
+              echsters University
             </p>
           </Link>
         </nav>
@@ -41,7 +41,7 @@ const Login = () => {
             </h1>
             <p className="text-left mt-10 font-normal text-lg mx-8">
               Welcome back to the women techsters University voting platform,
-              Sign in to vote in your preffered candidate.
+              Sign in to vote in your preferred candidate.
             </p>
             <div className="p-2">
               <form onSubmit={(e) => e.preventDefault()} className="p-2 mx-2">
@@ -49,7 +49,7 @@ const Login = () => {
                 <input
                   type="number"
                   name="std-id"
-                  placeholder="Stdent ID No."
+                  placeholder="Student ID No."
                   id="std-id"
                   className="w-full rounded-full py-3 px-6 border border-solid resize-y my-2"
                   style={{ borderColor: "#93278F" }}

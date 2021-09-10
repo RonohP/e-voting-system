@@ -1,12 +1,22 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {BiArrowBack} from 'react-icons/bi';
+import Logo from '../../images/WTLOGO.png';
+import '../NavBar/NavBar.css';
 import './Terms.css';
 
 export default function Terms() {
     return (
         <div>
             <section className='relative h-full w-full'>
+                    <nav className='navbar flex justify-between item- center mb-10 h-16 w-full sm:pl-2 md:pl-10 lg:pl-12 md:w-full '>
+                        <Link to='/' className='flex flex-row pt-6'>
+                            <img src={Logo} alt='WTLogo' className='w-12 h-11' />
+                                <p className='logo-text inline-block pt-6 pl-1 font-sans font-bold'>
+                            echsters University
+                             </p>
+                         </Link>
+                    </nav>
                     <h1 className='text-5xl font-bold terms text-center mt-20 mx-52'>
                     Terms and Conditions 
                     </h1>
@@ -58,24 +68,26 @@ export default function Terms() {
                         and that you have full responsibility for such content including and not limited to its legality, 
                         reliability and accuracy</p>
                 </div>
-                <div className='mx-10 p-5 align-center '>
+                <div className='mx-10 p-5 align-center '
+                style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                     <button 
                     type='submit'
                     className='contact-btn border rounded-full py-2 align-center m-8 px-8 border-solid my-2 font-bold'
-                    style={{ background: '#FFFF', color:'#CA1C1C', borderRadius:'8px', marginLeft: '600px',  }}>
+                    style={{ background: '#FFFF', color:'#CA1C1C', borderRadius:'8px'}}>
                     Decline
                     </button>
                     
                     <button
                     type='submit'
                     className='contact-btn border rounded-full py-2 align-center px-8 border-solid  my-2 font-bold'
-                    style={{ background: '#93278F', color:'#FFFF', borderRadius:'8px',  marginRight: '500px'}}
+                    style={{ background: '#93278F', color:'#FFFF', borderRadius:'8px'}}
                     >Accept</button>
                 </div>
-                <div  className= 'mx-10 p-5 align-center'>
+                <div  className= 'mx-10 p-5 align-center'
+                style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                 <button
                 className='back-btn border rounded-full py-2 px-10 border-solid w-auto mt-8 inline-block'
-                style={{ color: '#FFFF', background: '#93278F', borderRadius:'8px',  marginLeft: '650px', marginRight: '650px'}}
+                style={{ color: '#FFFF', background: '#93278F', borderRadius:'8px'}}
               >
                 <Link
                   className=' flex flex-row justify-evenly font-bold'

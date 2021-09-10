@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "../images/WTLOGO.png";
 import MessageSentImg from "../images/messageSent.svg";
 import { toast } from "react-toastify";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import EyeImg from "../images/eye.svg";
 
 const MessageSent = () => {
@@ -17,7 +17,7 @@ const MessageSent = () => {
       <div style={{ display: "flex", paddingTop: "2rem", paddingLeft: "3rem" }}>
         <img src={Logo} alt="WTLogo" className="w-12 h-11" />
         <span className="logo-text inline-block pt-6 pl-1 font-sans font-bold">
-          echsters Universisty
+          echsters University
         </span>
       </div>
       <div
@@ -83,9 +83,9 @@ const MessageSent = () => {
               />
             </div>
             <p style={{ color: "#16042ACC", marginTop: "3rem" }}>
-              Didnt receive code?{" "}
+              Didn't receive code?{" "}
               <span style={{ color: "#a45bb1" }}>
-                <a href="#">Resend now</a>
+                <Link >Resend now </Link>
               </span>
               <h2 style={{ marginTop: "2rem" }}>Enter new Password </h2>
               <div style={{ position: "relative" }}>
