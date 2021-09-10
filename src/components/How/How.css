@@ -10,11 +10,11 @@
   color: #93278F;  
 }
 
-.timeline .container ul li{
+.timeline  ul li{
     border-left: 1px dashed #93278F;
 }
 
-.timeline .container ul li::before{
+.timeline  ul li::before{
     position: absolute;
     left: -18px;
     top: -5px;
@@ -37,21 +37,21 @@
     align-items: center;
 }
 
-.timeline .container ul li.one::before{
+.timeline  ul li.one::before{
     content: '1';
 }
-.timeline .container ul li.two::before{
+.timeline  ul li.two::before{
     content: '2';
 }
-.timeline .container ul li.three::before{
+.timeline  ul li.three::before{
     content: '3';
 }
 
-.timeline .container ul li.four::before{
+.timeline  ul li.four::before{
     content: '4';
 }
 
-.timeline .container ul li:last-child{
+.timeline  ul li:last-child{
     border-left: 0;
 }
 

@@ -46,7 +46,7 @@ function LiveRes() {
                   candidate page via the link below
                 </p>
                 <button className='candidate-btn border rounded-full py-2 px-8 border-solid w-60'>
-                  <Link className='' to='/candidates'>
+                  <Link className='' to='/candidate'>
                     View candidates profile
                   </Link>
                 </button>
