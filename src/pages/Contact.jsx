@@ -38,7 +38,7 @@ function Contact() {
                     style={{ borderColor: '#93278F' }}
                   />
                   <label htmlFor='std-id' className='mx-2 my-2 p-1 text-base'>
-                    Stdent ID No.
+                    Student ID No.
                   </label>
                   <input
                     type='number'

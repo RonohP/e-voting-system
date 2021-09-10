@@ -25,7 +25,7 @@ export default function Terms() {
                     <p className=' mt-4 mb-4 font-normal text-base '>
                     Last Updated : September 05, 2021
                     </p>
-                    <p className='head'>Basic Priciples</p>
+                    <p className='head'>Basic Principle</p>
                 </div>
                 <div className='mx-10 p-5'>
                     <p className='head'> 1. Scope of application</p>
@@ -66,7 +66,7 @@ export default function Terms() {
                     <p className='head'>1.3 uploaded files</p>
                     <p> you acknowledge that you are responsible for ay uploaded Content, 
                         and that you have full responsibility for such content including and not limited to its legality, 
-                        reliability and accurracy</p>
+                        reliability and accuracy</p>
                 </div>
                 <div className='mx-10 p-5 align-center '
                 style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>

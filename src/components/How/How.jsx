@@ -12,7 +12,7 @@ function How() {
           </h1>
           <div className='content flex flex-warp align-center justify-between'>
             <div className='timeline relative mx-auto w-1/2'>
-              <div className='container relative m-auto block ml-24'>
+              <div className='relative m-auto block ml-24'>
                 <ul className='my-10 p-0 inline-block'>
                   <li className='one list-none m-auto pb-24 pl-7 relative'>
                     <h3 className=' font-semibold text-2xl relative'>
