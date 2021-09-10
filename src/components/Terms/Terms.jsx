@@ -13,7 +13,7 @@ export default function Terms() {
                         <Link to='/' className='flex flex-row pt-6'>
                             <img src={Logo} alt='WTLogo' className='w-12 h-11' />
                                 <p className='logo-text inline-block pt-6 pl-1 font-sans font-bold'>
-                            echsters Universisty
+                            echsters University
                              </p>
                          </Link>
                     </nav>

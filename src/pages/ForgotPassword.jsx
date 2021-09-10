@@ -15,7 +15,7 @@ const ForgotPassword = () => {
       <div style={{ display: "flex", paddingTop: "2rem", paddingLeft: "3rem" }}>
         <img src={Logo} alt="WTLogo" className="w-12 h-11" />
         <span className="logo-text inline-block pt-6 pl-1 font-sans font-bold">
-          echsters Universisty
+          echsters University
         </span>
       </div>
       <div
