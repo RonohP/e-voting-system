@@ -10,6 +10,7 @@ import Login from './components/Login/Login';
 import PageNotFound from './pages/PageNotFound';
 import ThankYou from './pages/ThankYou';
 import Terms from './components/Terms/Terms';
+import Candidate from './components/Candidate/Candidate';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route exact path='/register' component={Register} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/terms' component={Terms} />
+          <Route exact path='/candidate' component={Candidate} />
           <Route exact path='*' component={PageNotFound} />
 
         </Switch>
