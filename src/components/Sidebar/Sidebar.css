@@ -1,0 +1,24 @@
+.sidebar{
+    /* box-shadow: 0 0 5px #1a1a1a, 0 0 15px #a6a5a4; */
+    box-shadow: 0px 1px 8px rgba(0, 153, 255, 0.16);
+    background: #FCFDFD;
+}
+
+.side-active{
+    background: rgba(70, 13, 134, 0.1);
+    font-weight: bolder;
+    color: #460D86;
+    fill: #460D86;
+}
+
+.side-active::before{
+    position: absolute;
+    transform: rotate(90deg);
+    content: '';
+    bottom:30px;
+    left:-31px;
+    width: 64px;
+    height: 3px;
+    background: #460D86;
+    z-index: 1; 
+}

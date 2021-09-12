@@ -10,3 +10,21 @@
 .login-btn, .register-btn{
     border: #93278F solid ;
 }
+
+.active-navBar{
+    font-weight: bolder;
+    color: rgba(22, 4, 42, 0.8);
+    transform: scale(0.5);
+}
+
+.active-navBar::before{
+    position: absolute;
+    transform: translate(-50%);
+    content: '';
+    bottom:0;
+    left:45px;
+    width: 50px;
+    height: 2px;
+    background: #93278F;
+    z-index: 1; 
+}
