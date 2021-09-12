@@ -1,0 +1,33 @@
+.content input.search {
+  border: 2px solid #ececec;
+  border-radius: 5px;
+}
+
+.notification-label{
+    left: 75px;
+    top: 28px;
+}
+
+.profile-btn{
+    border-radius: 50%;
+    background-color: lightgray;
+    color: #444;
+    box-shadow: 0 5px 5px -3px #ddd;
+}
+
+.profile-btn span img{
+    border-radius: 50%;
+    padding: 1px;
+    display: inline-block;
+    top: 0;
+    right: 0px;
+}
+
+.profile-btn p{
+    display: inline-block;
+    left: 12px;
+}
+
+.notification-icon{
+    top: 23px;
+}
