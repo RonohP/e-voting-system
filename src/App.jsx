@@ -13,6 +13,7 @@ import Terms from "./components/Terms/Terms";
 import ForgotPassword from "./pages/ForgotPassword";
 import MessageSent from "./pages/MessageSent";
 import Candidate from './components/Candidate/Candidate';
+import Main from "./pages/Main/Main";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route exact path='/forgotPassword' component={ForgotPassword} />
           <Route exact path='/messageSent' component={MessageSent} />
           <Route exact path='/candidate' component={Candidate} />
+          <Route component={Main}/>
           <Route exact path='*' component={PageNotFound} />
         </Switch>
       </Router>
