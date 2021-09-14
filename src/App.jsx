@@ -10,6 +10,7 @@ import Login from "./pages/Login/Login";
 import PageNotFound from "./pages/PageNotFound";
 import ThankYou from "./pages/ThankYou";
 import Terms from "./components/Terms/Terms";
+import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy'
 import ForgotPassword from "./pages/ForgotPassword";
 import MessageSent from "./pages/MessageSent";
 import Candidate from './components/Candidate/Candidate';
@@ -29,6 +30,8 @@ function App() {
           <Route exact path='/register' component={Register} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/terms' component={Terms} />
+          <Route exact path='/terms' component={Terms} />
+          <Route exact path='/privacy-policy' component={PrivacyPolicy} />
           <Route exact path='/forgotPassword' component={ForgotPassword} />
           <Route exact path='/messageSent' component={MessageSent} />
           <Route exact path='/candidate' component={Candidate} />
