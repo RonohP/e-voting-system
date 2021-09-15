@@ -30,16 +30,20 @@ export default function SearchBar() {
           </button>
         </div>
         <div className='w-1/5 mx-2 my-2 text-center items-center flex '>
-            <button className='profile-btn relative w-16 h-16 font-bold inline-block'>
-              <span>
-                <img
+            <Link to='/edit-profile'>
+              <button className='profile-btn relative w-16 h-16 font-bold inline-block'>
+                <span>
+                  <img
                   src='https://thumbs.dreamstime.com/b/happy-black-woman-showing-ok-gesture-smiling-looking-camera-satisfied-hand-cheerful-african-female-customer-student-138434650.jpg'
                   alt='profile'
                   className='absolute w-16 h-16'
-                />
-              </span>
-            </button>
-            <p className='text-base font-bold p-4'>Jane Doe</p>
+                  />
+                </span>
+              </button>
+              <p className='text-base font-bold p-4'>Jane Doe</p>
+            </Link>
+            
+
         </div>
       </div>
     );
