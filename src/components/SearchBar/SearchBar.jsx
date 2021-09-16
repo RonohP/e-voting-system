@@ -30,7 +30,7 @@ export default function SearchBar() {
           </button>
         </div>
         <div className='w-1/5 mx-2 my-2 text-center items-center flex '>
-            <Link to='/edit-profile'>
+            <Link to='/settings'>
               <button className='profile-btn relative w-16 h-16 font-bold inline-block'>
                 <span>
                   <img

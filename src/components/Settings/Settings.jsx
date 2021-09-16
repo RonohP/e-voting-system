@@ -2,7 +2,7 @@ import React from 'react';
 import ProfileImage from '../ProfileImage/ProfileImage';
 import UserUpdate from '../UserUpdate/UserUpdate';
 
-function EditProfile() {
+function Settings() {
    
     return (
         <div>
@@ -20,4 +20,4 @@ function EditProfile() {
     )
 }
 
-export default EditProfile
+export default Settings;
