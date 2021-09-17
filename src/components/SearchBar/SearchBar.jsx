@@ -28,7 +28,7 @@ export default function SearchBar() {
           </button>
         </div>
         <div className='w-1/5 mx-2 my-2'>
-          <Link to='/edit-profile' className='flex flex-row items-center'>
+          <Link to='/settings' className='flex flex-row items-center'>
             <button
               className='profile-btn relative w-14 h-14 font-bold inline-block'
               style={{

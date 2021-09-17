@@ -39,7 +39,7 @@ const Login = () => {
             <h1 className="text-5xl font-bold text-left mx-8 ">
               Welcome Back!
             </h1>
-            <p className="text-left mt-10 font-normal text-lg mx-8">
+            <p className="text-left w-3/4  mt-10 font-normal text-lg mx-8">
               Welcome back to the women techsters University voting platform,
               Sign in to vote in your preferred candidate.
             </p>
@@ -51,7 +51,7 @@ const Login = () => {
                   name="std-id"
                   placeholder="Student ID No."
                   id="std-id"
-                  className="w-full rounded-full py-3 px-6 border border-solid resize-y my-2"
+                  className="w-3/4   rounded-full py-3 px-6 border border-solid resize-y my-2"
                   style={{ borderColor: "#93278F" }}
                 />
 
@@ -71,13 +71,13 @@ const Login = () => {
                       message: "Password must have at least 8 characters",
                     },
                   })}
-                  className="w-full rounded-full py-3 px-6 border border-solid resize-y my-2"
+                  className="w-3/4  rounded-full py-3 px-6 border border-solid resize-y my-2"
                   style={{ borderColor: "#93278F" }}
                 />
                 {errors.password && (
                   <p className="errorMessage">{errors.password.message}</p>
                 )}
-                <label>
+                <label className='block'>
                   <input
                     type="checkbox"
                     value="Remember Password "
@@ -97,7 +97,7 @@ const Login = () => {
                 <button
                   type="submit"
                   onClick={handleSubmit(handleLogin)}
-                  className="contact-btn border rounded-full py-2 px-8 border-solid w-full my-2 font-bold"
+                  className="contact-btn border rounded-full py-2 px-8 border-solid w-3/4  my-2 font-bold"
                   style={{ background: "#93278F", color: "#FFFF" }}
                 >
                   Login
