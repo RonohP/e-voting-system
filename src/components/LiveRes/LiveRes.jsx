@@ -12,27 +12,36 @@ function LiveRes() {
           <div className='content flex flex-warp align-center justify-between'>
             <div className='left'>
               <div className='chart-div h-96 w-full p-10 relative'>
-                <h3 className='left-label font-bold text-1xl absolute'>
+                <h3 className='left-label font-bold text-xl absolute'>
                   No. of Voters
                 </h3>
                 <ul className='chart table table-fixed max-w-2xl w-3/5 h-auto mx-auto'>
                   <li className='relative table-cell h-52 align-bottom'>
-                    <span className='one h-28 mx-4 block'></span>
+                    <span className='one h-28 mx-4 block' title='Kitan'></span>
                   </li>
                   <li className='relative table-cell h-52 align-bottom'>
-                    <span className='two h-3 mx-4 block'></span>
+                    <span className='two h-3 mx-4 block' title='Layla'></span>
                   </li>
                   <li className='relative table-cell h-52 align-bottom'>
-                    <span className='three h-24 mx-4 block'></span>
+                    <span
+                      className='three h-24 mx-4 block'
+                      title='Wawira'
+                    ></span>
                   </li>
                   <li className='relative table-cell h-52 align-bottom'>
-                    <span className=' four h-14 mx-4 block'></span>
+                    <span
+                      className=' four h-14 mx-4 block'
+                      title='Abena'
+                    ></span>
                   </li>
                   <li className='relative table-cell h-52 align-bottom'>
-                    <span className=' five h-48 mx-4 block'></span>
+                    <span
+                      className=' five h-48 mx-4 block'
+                      title='Zawadi'
+                    ></span>
                   </li>
                 </ul>
-                <h3 className='right-label font-bold text-1xl text-center pt-3'>
+                <h3 className='right-label font-bold text-xl text-center pt-3 my-4'>
                   Candidates
                 </h3>
               </div>

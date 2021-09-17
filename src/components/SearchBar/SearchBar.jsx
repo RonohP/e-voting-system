@@ -15,35 +15,29 @@ export default function SearchBar() {
             placeholder='Search...'
             className='search w-9/12 mx-4 px-2 py-1'
           />
-          <Link className=''>
+          <Link to='/dashboard' className=''>
             <button>
               <BsSearch />
             </button>
           </Link>
         </form>
-        <div className='w-1/5 mx-2 my-2 text-center'>
-          <button className='relative w-24 h-24'>
-            <span className='absolute notification-icon'>
-              <IoMdNotificationsOutline className='text-5xl' />
-            </span>
-            <span className='notification-label inline-block bg-red-600 text-white p-1 w-2.5 h-2.5 rounded-full absolute'></span>
+        <div className='w-1/5 mx-2 my-2'>
+          <button className='text-4xl py-3 px-4 text-center relative'>
+            <IoMdNotificationsOutline/>
+            <span className='notification-label w-3 h-3 bg-red-600 text-white p-1 rounded-full absolute'></span>
           </button>
         </div>
-        <div className='w-1/5 mx-2 my-2 text-center items-center flex '>
-            <Link to='/settings'>
-              <button className='profile-btn relative w-16 h-16 font-bold inline-block'>
-                <span>
-                  <img
-                  src='https://thumbs.dreamstime.com/b/happy-black-woman-showing-ok-gesture-smiling-looking-camera-satisfied-hand-cheerful-african-female-customer-student-138434650.jpg'
-                  alt='profile'
-                  className='absolute w-16 h-16'
-                  />
-                </span>
-              </button>
-              <p className='text-base font-bold p-4'>Jane Doe</p>
-            </Link>
-            
-
+        <div className='w-1/5 mx-2 my-2'>
+          <Link to='/settings' className='flex flex-row items-center'>
+            <button
+              className='profile-btn relative w-14 h-14 font-bold inline-block'
+              style={{
+                backgroundImage:
+                  'url(https://thumbs.dreamstime.com/b/happy-black-woman-showing-ok-gesture-smiling-looking-camera-satisfied-hand-cheerful-african-female-customer-student-138434650.jpg)',
+              }}
+            ></button>
+            <p className='text-base font-bold p-4 my-4'>Jane Doe</p>
+          </Link>
         </div>
       </div>
     );

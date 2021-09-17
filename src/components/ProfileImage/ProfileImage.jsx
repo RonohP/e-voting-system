@@ -74,7 +74,7 @@ const ProfileImage = () => {
                       style={{ opacity: '0', position: 'absolute', zIndex: '-1' }}
                   accept="image/*" onChange={handleFileChange} /> 
                   
-                    <label for='upload-photo' style={{cursor: 'pointer'}} >
+                    <label htmlFor='upload-photo' style={{cursor: 'pointer'}} >
                     <button 
                     variant='contained'
                     className='contact-btn border rounded-full py-2 mx-20 align-center px-8 border-solid  my-2 font-bold'
