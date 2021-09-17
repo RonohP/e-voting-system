@@ -2,7 +2,7 @@ import React from 'react';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import Vote from '../../components/Vote/Vote';
 import VoteGuide from '../../components/VoteGuide/VoteGuide';
-import EditProfile from '../../components/EditProfile/EditProfile';
+import Settings from '../../components/Settings/Settings';
 import { Switch, Route } from 'react-router-dom';
 import './Main.css';
 import SearchBar from '../../components/SearchBar/SearchBar';
@@ -25,8 +25,8 @@ export default function Main() {
           <Route exact path='/voters-guidelines'>
             <VoteGuide />
           </Route>
-          <Route exact path='/edit-profile'>
-            < EditProfile/>
+          <Route exact path='/settings'>
+            < Settings/>
           </Route>
         </Switch>
       </div>

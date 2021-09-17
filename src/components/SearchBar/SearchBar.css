@@ -4,8 +4,8 @@
 }
 
 .notification-label{
-    left: 75px;
-    top: 28px;
+    top: 15px;
+    left: 35px;
 }
 
 .profile-btn{
@@ -13,9 +13,12 @@
     background-color: lightgray;
     color: #444;
     box-shadow: 0 5px 5px -3px #ddd;
+    /* background: url('https://thumbs.dreamstime.com/b/happy-black-woman-showing-ok-gesture-smiling-looking-camera-satisfied-hand-cheerful-african-female-customer-student-138434650.jpg'); */
+    background-size: cover;
+    background-position: center center;
 }
 
-.profile-btn span img{
+.profile-btn  img{
     border-radius: 50%;
     padding: 1px;
     display: inline-block;
@@ -26,8 +29,4 @@
 .profile-btn p{
     display: inline-block;
     left: 12px;
-}
-
-.notification-icon{
-    top: 23px;
 }

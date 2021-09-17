@@ -54,7 +54,7 @@ const Register = () => {
                         <h1 className='text-5xl mx-6 font-bold text-left '>
                         Welcome!
                         </h1>
-                        <p className='text-left mt-10 font-normal text-lg mx-6'>
+                        <p className='text-left w-3/4  mt-10 font-normal text-lg mx-6'>
                         Register as a voter on the women techsters University 
                         voting platform to vote in your preferred candidate.
                         </p>
@@ -68,7 +68,7 @@ const Register = () => {
                             name='std-id'
                             placeholder='Student ID No.'
                             id='std-id'
-                            className='w-full rounded-full py-3 px-6 border border-solid resize-y my-2'
+                            className='w-3/4   rounded-full py-3 px-6 border border-solid resize-y my-2'
                             style={{ borderColor: '#93278F' }}
                             />
                                 
@@ -88,7 +88,7 @@ const Register = () => {
                                   },
                                 })}
                                 
-                                className='w-full rounded-full py-3 px-6 border border-solid resize-y my-2'
+                                className='w-3/4  rounded-full py-3 px-6 border border-solid resize-y my-2'
                                 style={{ borderColor: '#93278F' }}
                                 />
                                 {errors.email && (
@@ -113,7 +113,7 @@ const Register = () => {
                                   },
                                 })}
                               
-                                className='w-full rounded-full py-3 px-6 border border-solid resize-y my-2'
+                                className='w-3/4  rounded-full py-3 px-6 border border-solid resize-y my-2'
                                 style={{ borderColor: '#93278F' }}
                                 />
                                 {errors.password && (
@@ -135,7 +135,7 @@ const Register = () => {
                                       value === password.current || 'The passwords do not match',
                                   })}
                               
-                                className='w-full rounded-full py-3 px-6 border border-solid resize-y my-2'
+                                className='w-3/4  rounded-full py-3 px-6 border border-solid resize-y my-2'
                                 style={{ borderColor: '#93278F' }}
                                 />
                                  {errors.confirmPassword && (
@@ -146,14 +146,14 @@ const Register = () => {
                                  type='submit'
                                  
                                  onClick={handleSubmit(handleRegister)}
-                                 className='contact-btn border rounded-full py-2 px-8 border-solid w-full my-2 font-bold'
+                                 className='contact-btn border rounded-full py-2 px-8 border-solid w-3/4 my-2 font-bold'
                                 style={{ background: '#93278F', color:'#FFFF' }}
                                 >
                                  
                                 Sign Up
                                 
                                 </button>
-                                <p className='text-center mt-10 font-normal text-lg mx-5'>
+                                <p className=' w-3/4 text-center mt-10 font-normal text-lg'>
                                 By Clicking the sign up button, you agree with our
                                 <Link className='p-2 terms-conditions font-bold' to='/terms'>
                                 Terms and Conditions.
