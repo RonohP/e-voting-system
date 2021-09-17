@@ -1,7 +1,7 @@
 import React from 'react';
 import './Footer.css';
 import Logo from '../../images/WTLOGO.png';
-import { Link, p } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Footer() {
     return (

@@ -32,7 +32,7 @@ const ModalComponent = ({
           backgroundColor: "rgba(150, 146, 146, 0.75)",
         },
         content: {
-          margin: "0",
+          // margin: "0",
           padding: "0",
           width: "50rem",
           height: "50rem",

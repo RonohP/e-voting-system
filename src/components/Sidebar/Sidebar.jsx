@@ -44,7 +44,7 @@ export default function Sidebar() {
         Voters Guideline
       </NavLink>
 
-      <Link className=' absolute flex bottom-0 p-4 mt-4 mb-10 font-bold text-lg'>
+      <Link to='/login' className=' absolute flex bottom-0 p-4 mt-4 mb-10 font-bold text-lg'>
         <FiLogOut className='p4 m-1 mx-6' /> Logout
       </Link>
     </div>
