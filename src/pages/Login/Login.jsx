@@ -18,7 +18,7 @@ const Login = () => {
 
   const handleLogin = (userData) => {
     toast.success("login successful");
-    history.push("/home");
+    history.push("/dashboard");
   };
   return (
     <div>
@@ -51,7 +51,7 @@ const Login = () => {
                   name="std-id"
                   placeholder="Student ID No."
                   id="std-id"
-                  className="w-3/4   rounded-full py-3 px-6 border border-solid resize-y my-2"
+                  className="w-1/2  h-12 rounded-full py-3 px-6 border border-solid resize-y my-2"
                   style={{ borderColor: "#93278F" }}
                 />
 
@@ -71,13 +71,13 @@ const Login = () => {
                       message: "Password must have at least 8 characters",
                     },
                   })}
-                  className="w-3/4  rounded-full py-3 px-6 border border-solid resize-y my-2"
+                  className="w-1/2  h-12 rounded-full py-3 px-6 border border-solid resize-y my-2"
                   style={{ borderColor: "#93278F" }}
                 />
                 {errors.password && (
                   <p className="errorMessage">{errors.password.message}</p>
                 )}
-                <label className='block'>
+                <label className="block">
                   <input
                     type="checkbox"
                     value="Remember Password "
@@ -87,7 +87,7 @@ const Login = () => {
                   <span className="px-4">Remember Password</span>
                   <span>
                     <Link
-                      className=" forget-password mx-30 text-right px-20 font-bold"
+                      className=" forget-password mx-30 text-right px-18 font-bold"
                       to="/forgotPassword"
                     >
                       Forget Password?
@@ -97,7 +97,7 @@ const Login = () => {
                 <button
                   type="submit"
                   onClick={handleSubmit(handleLogin)}
-                  className="contact-btn border rounded-full py-2 px-8 border-solid w-3/4  my-2 font-bold"
+                  className="register-btn border w-1/2  h-12  rounded-full py-2 px-8 border-solid"
                   style={{ background: "#93278F", color: "#FFFF" }}
                 >
                   Login
