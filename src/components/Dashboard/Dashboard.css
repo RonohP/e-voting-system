@@ -98,3 +98,14 @@
     z-index: 1; 
     opacity: 0;
 }
+
+.activedash::before{
+  position: absolute;
+    content: '';
+    bottom: -5px;
+    left:6px;
+    width: 64px;
+    height: 3px;
+    background: #460D86;
+    z-index: 1; 
+}
