@@ -39,20 +39,65 @@
   background-color: #ffc7ca;
 }
 
+.left .chart-div .chart span.one::before{
+  content: attr(title);
+  position: absolute;
+  display: block;
+  text-align: center;
+  word-wrap: break-word;
+  top: 100%;
+}
+
 .left .chart-div .chart span.two {
   background: #f1fbb7;
+}
+
+.left .chart-div .chart span.two::before{
+  content: attr(title);
+  position: absolute;
+  display: block;
+  text-align: center;
+  word-wrap: break-word;
+  top: 100%;
 }
 
 .left .chart-div .chart span.three {
   background: #b8d0ff;
 }
 
+.left .chart-div .chart span.three::before{
+  content: attr(title);
+  position: absolute;
+  display: block;
+  text-align: center;
+  word-wrap: break-word;
+  top: 100%;
+}
+
 .left .chart-div .chart span.four {
   background: #e5ffae;
 }
 
+.left .chart-div .chart span.four::before{
+  content: attr(title);
+  position: absolute;
+  display: block;
+  text-align: center;
+  word-wrap: break-word;
+  top: 100%;
+}
+
 .left .chart-div .chart span.five {
   background: #a37db6;
+}
+
+.left .chart-div .chart span.five::before{
+  content: attr(title);
+  position: absolute;
+  display: block;
+  text-align: center;
+  word-wrap: break-word;
+  top: 100%;
 }
 
 .right .candidate-btn{

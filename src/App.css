@@ -36,11 +36,22 @@
 
 /* Handle (the drag scrolling handle)*/
 ::-webkit-scrollbar-thumb {
-  background: #93128E;
+  background: #93128e;
   border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #300745;
+}
+
+.modal {
+  display: block;
+  position: relative;
+  height: 55%;
+  background: url(./images/candidate-bg.svg) bottom center;
+  background-repeat: no-repeat;
+  background-size: 150%;
+  padding-top: 1rem;
+  padding-left: 1rem;
 }

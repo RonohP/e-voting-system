@@ -2,3 +2,99 @@
   box-shadow: 0px 8px 24px rgba(109, 141, 173, 0.16);
   border-radius: 5px;
 }
+
+.left .chart-div .left-label-dash{
+  transform: rotate(270deg);
+  transform-origin: (0,0);
+  top: 130px;
+  /* left: 80px; */
+}
+
+.left .chart-div .left-label-dash, .right-label.dash{
+  color: #460D86;
+}
+
+.left .chart-div .chart.dash {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(204, 204, 204, 1) 1%,
+      transparent 1%
+    ),
+    linear-gradient(to right, rgba(204, 204, 204, 1) 1%, transparent 1%);
+  background-size: 100% 50px;
+  background-position: left top;
+}
+
+.left .chart-div .chart.dash li {
+  background-image: linear-gradient(
+    to left,
+    rgba(204, 204, 204, 1) 1%,
+    transparent 1%
+  );
+  background-position: right;
+  height: 201px;
+}
+
+.dash.content .circle span {
+  border-radius: 500%;
+  background: #ffff;
+  border: 40px solid transparent;
+  background-repeat: no-repeat;
+  background-origin: content-box, border-box, border-box, border-box, border-box;
+  background-clip: content-box, border-box, border-box, border-box, border-box;
+}
+
+.dash.content .circle {
+  position: relative;
+  border-radius: 500%;
+  border: 25px solid transparent;
+  background-repeat: no-repeat;
+  background-origin: content-box, border-box, border-box, border-box, border-box;
+  background-clip: content-box, border-box, border-box, border-box, border-box;
+}
+
+.dash.content span {
+  left: 75px;
+  top: 40px;
+}
+
+.dash.content span.three {
+  left: 90px;
+  top: 40px;
+}
+
+.dash.content .circle.one {
+  background-size: 100% 100%, 100% 100%;
+  background-image: linear-gradient(#ffff, #ffff),
+    linear-gradient(rgba(6, 20, 147, 0.8), rgba(6, 20, 147, 0.8));
+}
+
+.dash.content .circle.two {
+  background-size: 100% 100%, 50% 100%, 50% 100%;
+  background-image: linear-gradient(white, white),
+    linear-gradient(30deg, rgba(35, 135, 81, 0.9), rgba(35, 135, 81, 0.9)),
+    linear-gradient(120deg, rgba(144, 254, 155, 0.5) 20%, rgba(35, 135, 81, 0.9) 3%);
+  background-position: center center, left top, right top;
+  transform: rotate(80deg);
+}
+
+.dash.content .circle.three {
+  background-size: 100% 100%, 50% 100%, 50% 100%;
+  background-image: linear-gradient(white, white),
+    linear-gradient(30deg, #F2FCB3, #F2FCB3),
+    linear-gradient(110deg, #E5E941 10%, #F2FCB3 3%);
+  background-position: center center, left top, right top;
+  transform: rotate(30deg);
+}
+
+.calendar-active::before{
+    position: absolute;
+    content: '';
+    bottom:30px;
+    left:-31px;
+    width: 64px;
+    height: 3px;
+    background: #460D86;
+    z-index: 1; 
+    opacity: 0;
+}
