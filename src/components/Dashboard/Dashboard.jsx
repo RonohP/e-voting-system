@@ -29,36 +29,64 @@ export default function Dashboard() {
         </div>
         <div className='card-side mx-2 p-4 w-1/2'>
           <h2 className='text-xl font-semibold my-4'>Calendar</h2>
-          <div className='justify-evenly'>
-            <NavLink
-              exact
-              to='/today'
-              activeClassName='calendar-active'
-              className='mr-4 text-lg font-semibold p-4 opacity-40 my-4'
-            >
-              Today
-            </NavLink>
-            <NavLink
-              exact
-              to='/nextWeek'
-              activeClassName='calendar-active'
-              className='mr-4 text-lg font-semibold p-4 opacity-40 my-4'
-            >
-              Next Week
-            </NavLink>
-            <NavLink
-              exact
-              to='/thisMonth'
-              activeClassName='calendar-active'
-              className='mr-4 text-lg font-semibold p-4 opacity-40 my-4'
-            >
-              This Month
-            </NavLink>
+          <div className=''>
+            <div className='flex justify-evenly text-center'>
+              <NavLink
+                exact
+                to='/today'
+                activeClassName='calendar-active'
+                className=' activedash relative mr-4 text-lg font-semibold p-4 my-1'
+              >
+                Today
+              </NavLink>
+              <NavLink
+                exact
+                to='/nextWeek'
+                activeClassName='calendar-active'
+                className='mr-4 text-lg font-semibold p-4 opacity-40 my-1'
+              >
+                Next Week
+              </NavLink>
+              <NavLink
+                exact
+                to='/thisMonth'
+                activeClassName='calendar-active'
+                className='mr-4 text-lg font-semibold p-4 opacity-40 my-1'
+              >
+                This Month
+              </NavLink>
+            </div>
             <hr />
+            <div className='flex flex-row justify-evenly opacity-30 font-medium text-xs my-2'>
+              <p>07:00</p>
+              <p>08:00</p>
+              <p>09:00</p>
+              <p>10:00</p>
+              <p>11:00</p>
+            </div>
+            <div className='mx-4 my-4 flex '>
+              <div
+                className='w-12 h-auto font-semibold text-2xl text-center mx-10 my-8'
+                style={{
+                  color: '#1A56B0',
+                  fontFamily: 'Work Sans',
+                }}
+              >
+                <p>27 Sept</p>
+              </div>
+              <div
+                className='w-56 text-sm font-normal mx-4 my-8'
+                style={{
+                  background: 'rgba(26, 86, 176, 0.1)',
+                  borderRadius: '5px',
+                  color: '#1A56B0',
+                }}
+              >
+                <p className='pl-4 py-2'>President Student Council</p>
+              </div>
+            </div>
             <Switch>
-              <Route exact path='/today'>
-                <div className='mx-4'></div>
-              </Route>
+              <Route exact path='/today'></Route>
               <Route exact path='/nextWeek'></Route>
               <Route exact path='/thisMonth'></Route>
             </Switch>
