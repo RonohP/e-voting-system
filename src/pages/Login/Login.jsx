@@ -1,13 +1,17 @@
 import React from "react";
+import { useState } from "react";
 import { useHistory } from "react-router";
 import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
 import Logo from "../../images/WTLOGO.png";
 import Log from "../../images/Log.svg";
 import "../../components/NavBar/NavBar";
 import "./Login.css";
 
+const eye = <FontAwesomeIcon icon={faEye} />;
 const Login = () => {
   const history = useHistory();
   const {
@@ -15,7 +19,10 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-
+  const [passwordShown, setPasswordShown] = useState(false);
+   const togglePasswordVisiblity = () => {
+     setPasswordShown(passwordShown ? false : true);
+   };
   const handleLogin = (userData) => {
     toast.success("login successful");
     history.push("/dashboard");
@@ -45,22 +52,43 @@ const Login = () => {
             </p>
             <div className="p-2">
               <form onSubmit={(e) => e.preventDefault()} className="p-2 mx-2">
-                <label htmlFor="std-id" className=" my-2 p-1 text-base"></label>
+              <label htmlFor="studentID" className=" my-2 p-1 text-base"></label>
                 <input
                   type="number"
-                  name="std-id"
-                  placeholder="Student ID No."
+                  name="studentID"
+                  placeholder="student ID No."
                   id="std-id"
-                  className="w-1/2  h-12 rounded-full py-3 px-6 border border-solid resize-y my-2"
+                  {...register("studentID", {
+                    required: "student Id is Required",
+                    min: {
+                      value: 1,
+                      message: "Minimum Required ID is 1",
+                    },
+                    max: {
+                      value: 1000,
+                      message: "Maximum allowed ID is 1000",
+                    },
+                    pattern: {
+                      value: /^[0-9]*$/,
+                      message: "Only numbers are allowed",
+                    }
+                  })}
+                  className="w-1/2  h-12 rounded-full py-3 px-6 border border-solid resize-y my-2 block"
                   style={{ borderColor: "#93278F" }}
                 />
-
+                 
+              
+              {errors.studentID && (
+                <p className="errorMessage" style={{color: "red"}}>{errors.studentID.message}</p>
+              )}
+        
                 <label
                   htmlFor="password"
                   className="mx-2 my-2 p-1 text-base"
                 ></label>
+
                 <input
-                  type="password"
+                  type= {passwordShown ? "text" : "password"}
                   name="password"
                   id="password"
                   placeholder="Password"
@@ -72,10 +100,11 @@ const Login = () => {
                     },
                   })}
                   className="w-1/2  h-12 rounded-full py-3 px-6 border border-solid resize-y my-2"
-                  style={{ borderColor: "#93278F" }}
+                  style={{ borderColor: "#93278F", marginLeft: "-20px"}}
                 />
+                <i  style={{ margin: "-40px", color: "#93278F"}}onClick={togglePasswordVisiblity}>{eye}</i>
                 {errors.password && (
-                  <p className="errorMessage">{errors.password.message}</p>
+                  <p className="errorMessage" style={{color: "red"}}>{errors.password.message}</p>
                 )}
                 <label className="block">
                   <input
@@ -97,7 +126,7 @@ const Login = () => {
                 <button
                   type="submit"
                   onClick={handleSubmit(handleLogin)}
-                  className="register-btn border w-1/2  h-12  rounded-full py-2 px-8 border-solid"
+                  className="register-btn border w-1/2  h-12  rounded-full py-2 px-8 border-solid block"
                   style={{ background: "#93278F", color: "#FFFF" }}
                 >
                   Login
@@ -112,3 +141,5 @@ const Login = () => {
 };
 
 export default Login;
+
+
