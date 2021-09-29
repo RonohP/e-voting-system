@@ -4,33 +4,64 @@ import { useForm } from "react-hook-form";
 import { useHistory } from "react-router";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
+import { useMutation, useQueryClient } from "react-query";
 import Logo from "../../images/WTLOGO.png";
 import SignUp from "../../images/SignUp.svg";
 import "../../components/NavBar/NavBar.css";
 import "../../components/Footer/Footer";
 import "./Register.css";
+import { REGISTER_URL } from "../../api/urls";
+import { useAxios } from "../../api/hooks/useAxios";
 
+
+const eye = <FontAwesomeIcon icon={faEye} />;
 const Register = () => {
-  const [users, setUsers] = useState([]);
+  const [passwordShown, setPasswordShown] = useState(false);
+  const togglePasswordVisiblity = () => {
+    setPasswordShown(passwordShown ? false : true);
+  };
+
+  const [users] = useState([]);
   const history = useHistory();
+  const axios = useAxios();
+
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm();
+  const queryClient = useQueryClient();
   const password = useRef({});
   password.current = watch("password", "");
+
+  const registeruser = async (data) => {
+    const { data: response } = await axios.post(`${REGISTER_URL}`, data);
+    return response.data;
+  };
+
+  const { mutate} = useMutation(registeruser, {
+    onSuccess: (data) => {
+      toast.success("register successful, please login");
+      history.push("/login");
+    },
+    onError: () => {
+      toast.error("there was an error");
+    },
+    onSettled: () => {
+      queryClient.invalidateQueries("create");
+    },
+  });
+
   const handleRegister = (data) => {
     console.log(data);
     const user = {
-      email: data.email,
+      schoolId: data.studentID,
       password: data.password,
-      confirmPassword: data.confirmPassword,
     };
-    setUsers([...users, user]);
-    toast.success("register successful, please login");
-    history.push("/login");
+    mutate(user);
   };
 
   console.log(users);
@@ -58,44 +89,35 @@ const Register = () => {
             </p>
             <div className="p-2">
               <form onSubmit={(e) => e.preventDefault()} className="p-2 mx-2">
-                <label htmlFor="std-id" className=" my-2 p-1 text-base"></label>
+                <label
+                  htmlFor="studentID"
+                  className=" mx-4  my-2 p-1 text-base"
+                ></label>
                 <input
-                  type="number"
-                  name="std-id"
-                  placeholder="Student ID No."
+                  type="text"
+                  name="studentID"
+                  placeholder="student ID No."
                   id="std-id"
-                  className="w-1/2  h-12 rounded-full py-3 px-6 border border-solid resize-y my-2"
+                  {...register("studentID", {
+                    required: "student Id is Required",
+                  })}
+                  className="w-1/2 focus:outline-none  h-12 rounded-full py-3 px-6 border border-solid resize-y my-2 block"
                   style={{ borderColor: "#93278F" }}
                 />
 
-                <label
-                  htmlFor="email"
-                  className="mx-2 my-2 p-1 text-base"
-                ></label>
-                <input
-                  type="email"
-                  placeholder=" Student mail address"
-                  name="email"
-                  id="email"
-                  {...register("email", {
-                    required: "Email is required",
-                    pattern: {
-                      value: !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                      message: "Enter a valid e-mail address",
-                    },
-                  })}
-                  className="w-1/2  h-12 rounded-full py-3 px-6 border border-solid resize-y my-2"
-                  style={{ borderColor: "#93278F" }}
-                />
-                {errors.email && (
-                  <p className="errorMessage">{errors.email.message}</p>
+                {errors.studentID && (
+                  <p className="errorMessage" style={{ color: "red" }}>
+                    {errors.studentID.message}
+                  </p>
                 )}
+
                 <label
                   htmlFor="password"
                   className="mx-2 my-2 p-1 text-base"
                 ></label>
+
                 <input
-                  type="password"
+                  type={passwordShown ? "text" : "password"}
                   name="password"
                   id="password"
                   placeholder="Password"
@@ -106,39 +128,25 @@ const Register = () => {
                       message: "Password must have at least 8 characters",
                     },
                   })}
-                  className="w-1/2  h-12 rounded-full py-3 px-6 border border-solid resize-y my-2"
-                  style={{ borderColor: "#93278F" }}
+                  className="w-1/2 focus:outline-none  h-12 rounded-full py-3 px-6 border border-solid resize-y my-2"
+                  style={{ borderColor: "#93278F", marginLeft: "-20px" }}
                 />
+                <i
+                  style={{ margin: "-40px", color: "#93278F" }}
+                  onClick={togglePasswordVisiblity}
+                >
+                  {eye}
+                </i>
                 {errors.password && (
-                  <p className="errorMessage">{errors.password.message}</p>
-                )}
-                <label
-                  htmlFor="password"
-                  className="mx-2 my-2 p-1 text-base"
-                ></label>
-                <input
-                  type="password"
-                  name="ConfirmPassword"
-                  id="password"
-                  placeholder="Confirm password"
-                  {...register("confirmPassword", {
-                    validate: (value) =>
-                      value === password.current ||
-                      "The passwords do not match",
-                  })}
-                  className="w-1/2  h-12 rounded-full py-3 px-6 border border-solid resize-y my-2"
-                  style={{ borderColor: "#93278F" }}
-                />
-                {errors.confirmPassword && (
-                  <p className="errorMessage">
-                    {errors.confirmPassword.message}
+                  <p className="errorMessage" style={{ color: "red" }}>
+                    {errors.password.message}
                   </p>
                 )}
 
                 <button
                   type="submit"
                   onClick={handleSubmit(handleRegister)}
-                  className="contact-btn border rounded-full py-2 px-8 border-solid w-1/2 my-2 font-bold"
+                  className="contact-btn border rounded-full py-2 px-8 border-solid w-1/2 my-2 font-bold block"
                   style={{ background: "#93278F", color: "#FFFF" }}
                 >
                   Sign Up
