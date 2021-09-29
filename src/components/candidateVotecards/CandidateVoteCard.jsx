@@ -4,7 +4,7 @@ import ModalComponent from "../Modal";
 import Swal from "sweetalert2";
 import VoteSuccessImg from "../../images/voteSuccess.svg";
 
-const CandidateVoteCard = ({ image, name, jobTitle, age }) => {
+const CandidateVoteCard = ({ image, name, jobTitle, candidateInfo }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const vote = () => {
@@ -47,15 +47,13 @@ const CandidateVoteCard = ({ image, name, jobTitle, age }) => {
         name={name}
         profile={image}
         job={jobTitle}
-        age="26 years old"
-        slogan='"Getting me elected means leadership and growth"'
+        age={candidateInfo?.age}
+        slogan={candidateInfo.bio}
         contentH1="Fellow Techsters,"
-        content="My name is Zawadi Makena and i am running for president student council.  I care about the interest and the voice
-of WTU Students and i desire to serve them as there president, but i cant  do that without your votes. Please vote
-for me and i will be the advocate of WTU students  and make sure the voice of the students are heard.  I promise to 
-run a Trustworthy, Transparent and Reliable council. I humbly request for your vote and together we would make
-WTU better. 
-Thank You. "
+        content={candidateInfo.campaignPromise?.replace(
+          "Fellow Techsters,",
+          ""
+        )}
       />
     </div>
   );

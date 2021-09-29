@@ -5,8 +5,35 @@ import Cyber from "../../images/Cyber.svg";
 import Product from "../../images/Product.svg";
 import Management from "../../images/Management.svg";
 import CandidateVoteCard from "../candidateVotecards/CandidateVoteCard";
+import { useCandidates } from "../../api/hooks/useCandidates";
 
 export default function Vote() {
+  const { data: candidates } = useCandidates();
+
+  const getImage = (school) => {
+    let image = null;
+    switch (true) {
+      case school.includes("Data"):
+        image = Data;
+        break;
+      case school.includes("Software"):
+        image = Software;
+        break;
+      case school.includes("Management"):
+        image = Management;
+        break;
+      case school.includes("Product"):
+        image = Product;
+        break;
+      case school.includes("Cyber"):
+        image = Cyber;
+        break;
+      default:
+        image = null;
+    }
+    return image;
+  };
+
   return (
     <div style={{ backgroundColor: "#E5E5E5", height: "100%" }}>
       <div className="ml-10">
@@ -28,7 +55,6 @@ export default function Vote() {
           display: "grid",
           placeItems: "center",
           marginTop: "2rem",
-
           gridTemplateColumns: "1fr 1fr",
           columnGap: "4rem",
           rowGap: "2rem",
@@ -36,33 +62,30 @@ export default function Vote() {
           alignItems: "center",
         }}
       >
-        <CandidateVoteCard
-          image={Software}
-          name="Kitan Babs"
-          jobTitle="Software Development"
-        />
-        <CandidateVoteCard
-          image={Data}
-          name="Kitan Babs"
-          jobTitle="Data Science"
-        />{" "}
-        <CandidateVoteCard
-          image={Management}
-          name="Wawira Jacobs"
-          jobTitle="Product Management"
-        />{" "}
-        <CandidateVoteCard
-          image={Cyber}
-          name="Abena Kwami"
-          jobTitle="Cyber Security"
-        />{" "}
-        <div style={{ gridColumn: "1 / span 2", margin: "auto" }}>
-          <CandidateVoteCard
-            image={Product}
-            name="Zawadi Makena"
-            jobTitle="Product Design"
-          />
-        </div>
+        {candidates?.map((candidate, index) => {
+          console.log(getImage("Data"), "get image");
+          if (index + 1 !== candidates.length) {
+            return (
+              <CandidateVoteCard
+                image={getImage(candidate?.school)}
+                name={candidate?.firstName + " " + candidate?.lastName}
+                jobTitle={candidate?.school}
+                candidateInfo={candidate}
+              />
+            );
+          } else {
+            return (
+              <div style={{ gridColumn: "1 / span 2", margin: "auto" }}>
+                <CandidateVoteCard
+                  image={getImage(candidate?.school)}
+                  name={candidate?.firstName + " " + candidate?.lastName}
+                  jobTitle={candidate?.school}
+                  candidateInfo={candidate}
+                />
+              </div>
+            );
+          }
+        })}
       </div>
     </div>
   );

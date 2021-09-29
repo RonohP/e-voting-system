@@ -7,9 +7,13 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import Logo from "../../images/WTLOGO.png";
+import { useMutation, useQueryClient } from "react-query";
 import Log from "../../images/Log.svg";
 import "../../components/NavBar/NavBar";
 import "./Login.css";
+import { useAxios } from "../../api/hooks/useAxios";
+import { LOGIN_URL } from "../../api/urls";
+import { useAuth } from "../../utils/hooks/useAuth";
 
 const eye = <FontAwesomeIcon icon={faEye} />;
 const Login = () => {
@@ -19,13 +23,43 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const queryClient = useQueryClient();
+  const axios = useAxios();
+  const { signin } = useAuth();
   const [passwordShown, setPasswordShown] = useState(false);
-   const togglePasswordVisiblity = () => {
-     setPasswordShown(passwordShown ? false : true);
-   };
-  const handleLogin = (userData) => {
-    toast.success("login successful");
-    history.push("/dashboard");
+
+  const togglePasswordVisiblity = () => {
+    setPasswordShown(passwordShown ? false : true);
+  };
+
+  const loginuser = async (data) => {
+    const { data: response } = await axios.post(`${LOGIN_URL}`, data);
+    console.log(response, "data returned");
+
+    return response;
+  };
+
+  const { mutate, isLoading } = useMutation(loginuser, {
+    onSuccess: (data) => {
+      console.log(data, "<<<>>>>");
+      signin(data, data.token);
+      toast.success("login successful");
+      history.push("/dashboard");
+    },
+    onError: () => {
+      toast.error("there was an error");
+    },
+    onSettled: () => {
+      queryClient.invalidateQueries("create");
+    },
+  });
+
+  const handleLogin = (loginData) => {
+    const user = {
+      schoolId: loginData.studentID,
+      password: loginData.password,
+    };
+    mutate(user);
   };
   return (
     <div>
@@ -52,43 +86,35 @@ const Login = () => {
             </p>
             <div className="p-2">
               <form onSubmit={(e) => e.preventDefault()} className="p-2 mx-2">
-              <label htmlFor="studentID" className=" my-2 p-1 text-base"></label>
+                <label
+                  htmlFor="studentID"
+                  className=" my-2 p-1 text-base"
+                ></label>
                 <input
-                  type="number"
+                  type="string"
                   name="studentID"
                   placeholder="student ID No."
                   id="std-id"
                   {...register("studentID", {
                     required: "student Id is Required",
-                    min: {
-                      value: 1,
-                      message: "Minimum Required ID is 1",
-                    },
-                    max: {
-                      value: 1000,
-                      message: "Maximum allowed ID is 1000",
-                    },
-                    pattern: {
-                      value: /^[0-9]*$/,
-                      message: "Only numbers are allowed",
-                    }
                   })}
-                  className="w-1/2  h-12 rounded-full py-3 px-6 border border-solid resize-y my-2 block"
+                  className="w-1/2  h-12 rounded-full  py-3 px-6 border border-solid resize-y my-2 block"
                   style={{ borderColor: "#93278F" }}
                 />
-                 
-              
-              {errors.studentID && (
-                <p className="errorMessage" style={{color: "red"}}>{errors.studentID.message}</p>
-              )}
-        
+
+                {errors.studentID && (
+                  <p className="errorMessage" style={{ color: "red" }}>
+                    {errors.studentID.message}
+                  </p>
+                )}
+
                 <label
                   htmlFor="password"
                   className="mx-2 my-2 p-1 text-base"
                 ></label>
 
                 <input
-                  type= {passwordShown ? "text" : "password"}
+                  type={passwordShown ? "text" : "password"}
                   name="password"
                   id="password"
                   placeholder="Password"
@@ -100,11 +126,18 @@ const Login = () => {
                     },
                   })}
                   className="w-1/2  h-12 rounded-full py-3 px-6 border border-solid resize-y my-2"
-                  style={{ borderColor: "#93278F", marginLeft: "-20px"}}
+                  style={{ borderColor: "#93278F", marginLeft: "-20px" }}
                 />
-                <i  style={{ margin: "-40px", color: "#93278F"}}onClick={togglePasswordVisiblity}>{eye}</i>
+                <i
+                  style={{ margin: "-40px", color: "#93278F" }}
+                  onClick={togglePasswordVisiblity}
+                >
+                  {eye}
+                </i>
                 {errors.password && (
-                  <p className="errorMessage" style={{color: "red"}}>{errors.password.message}</p>
+                  <p className="errorMessage" style={{ color: "red" }}>
+                    {errors.password.message}
+                  </p>
                 )}
                 <label className="block">
                   <input
@@ -141,5 +174,3 @@ const Login = () => {
 };
 
 export default Login;
-
-
