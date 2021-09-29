@@ -25,7 +25,7 @@
 /*style the scrollbar*/
 /* width of the scrollbar*/
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
 }
 
 /* Track (progress bar) of the scrollbar*/
