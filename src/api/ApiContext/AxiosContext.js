@@ -27,7 +27,7 @@ export default function AxiosProvider({ children }) {
     });
 
     return axios;
-  }, []);
+  }, [accessToken]);
 
   return (
     <AxiosContext.Provider value={axios}>{children}</AxiosContext.Provider>

@@ -39,7 +39,7 @@ const Login = () => {
     return response;
   };
 
-  const { mutate, isLoading } = useMutation(loginuser, {
+  const { mutate } = useMutation(loginuser, {
     onSuccess: (data) => {
       console.log(data, "<<<>>>>");
       signin(data, data.token);

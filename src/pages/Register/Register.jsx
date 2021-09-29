@@ -14,7 +14,7 @@ import "../../components/Footer/Footer";
 import "./Register.css";
 import { REGISTER_URL } from "../../api/urls";
 import { useAxios } from "../../api/hooks/useAxios";
-import { useAuth } from "../../utils/hooks/useAuth";
+
 
 const eye = <FontAwesomeIcon icon={faEye} />;
 const Register = () => {
@@ -23,7 +23,7 @@ const Register = () => {
     setPasswordShown(passwordShown ? false : true);
   };
 
-  const [users, setUsers] = useState([]);
+  const [users] = useState([]);
   const history = useHistory();
   const axios = useAxios();
 
@@ -42,7 +42,7 @@ const Register = () => {
     return response.data;
   };
 
-  const { mutate, isLoading } = useMutation(registeruser, {
+  const { mutate} = useMutation(registeruser, {
     onSuccess: (data) => {
       toast.success("register successful, please login");
       history.push("/login");
