@@ -2,21 +2,50 @@ import React from "react";
 import { useState } from "react";
 import ModalComponent from "../Modal";
 import Swal from "sweetalert2";
+import { toast } from "react-toastify";
+import { useMutation, useQueryClient } from "react-query";
 import VoteSuccessImg from "../../images/voteSuccess.svg";
+import { VOTE_URL } from "../../api/urls";
+import { useAxios } from "../../api/hooks/useAxios";
+import { useAuth } from "../../utils/hooks/useAuth";
 
 const CandidateVoteCard = ({ image, name, jobTitle, candidateInfo }) => {
+  const axios = useAxios();
+  const { user } = useAuth();
+
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  const vote = () => {
-    Swal.fire({
-      title: "<h2 style='color:#16042A'>Voting Successful</h2>",
-      imageUrl: VoteSuccessImg,
-      text: `You have successfully voted for ${name}`,
-      imageHeight: 130,
-      imageWidth: 150,
+  const voteCandidate = async (data) => {
+    const { data: response } = await axios.post(`${VOTE_URL}`, data);
+    return response.data;
+  };
 
-      showConfirmButton: false,
-    });
+  const { mutate } = useMutation(voteCandidate, {
+    onSuccess: (data) => {
+      Swal.fire({
+        title: "<h2 style='color:#16042A'>Voting Successful</h2>",
+        imageUrl: VoteSuccessImg,
+        text: `You have successfully voted for ${name}`,
+        imageHeight: 130,
+        imageWidth: 150,
+        showConfirmButton: false,
+      });
+    },
+    onError: (err) => {
+      toast.error(err.response.data);
+    },
+    onSettled: () => {
+      // queryClient.invalidateQueries("cast vote");
+    },
+  });
+
+  const handleVote = (data) => {
+    console.log(data);
+    const voteCast = {
+      voterId: user.id,
+      candidateId: candidateInfo.id,
+    };
+    mutate(voteCast);
   };
 
   return (
@@ -33,7 +62,7 @@ const CandidateVoteCard = ({ image, name, jobTitle, candidateInfo }) => {
           View Details
         </button>
         <button
-          onClick={() => vote()}
+          onClick={() => handleVote()}
           className="w-40  h-14 rounded-md  py-3 px-6 border border-solid resize-y my-2"
           style={{ backgroundColor: "#93278F" }}
         >

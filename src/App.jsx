@@ -10,6 +10,8 @@ import Login from "./pages/Login/Login";
 import PageNotFound from "./pages/PageNotFound";
 import ThankYou from "./pages/ThankYou";
 import Terms from "./components/Terms/Terms";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy";
 import ForgotPassword from "./pages/ForgotPassword";
 import MessageSent from "./pages/MessageSent";
@@ -51,6 +53,18 @@ function App() {
                 <Route exact path="*" component={PageNotFound} />
               </Switch>
             </Router>
+            <ToastContainer
+              position="top-right"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="colored"
+            />
           </Fragment>
         </QueryClientProvider>
       </AxiosProvider>
