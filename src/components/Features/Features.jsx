@@ -7,7 +7,7 @@ import vote from '../../images/online-voting.svg';
 
 function Features() {
     return (
-      <section className='features py-24'>
+      <section className='features py-24 w-full'>
         <div className='max-width'>
           <h1 className='title relative text-center text-5xl font-medium mb-14 pb-5'>
             Our Features
