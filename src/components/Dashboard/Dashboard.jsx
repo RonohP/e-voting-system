@@ -4,18 +4,8 @@ import VotingRafiki from '../../images/Voting-rafiki.svg';
 import { Switch, Route, NavLink } from 'react-router-dom';
 import { useAuth } from '../../utils/hooks/useAuth';
 import BarChart from '../BarChart';
-import {Doughnut} from 'react-chartjs-2';
+import DoughnutChart from '../DoughnutChart';
 
-const data = {
-  labels: ['Voters'],
-  datasets: [
-    {
-      label: 'Number of Voters',
-      data: [100],
-      backgroundColor: 'rgba(6, 20, 147, 0.8)',
-    },
-  ],
-};
 
 export default function Dashboard() {
   const { user } = useAuth();
@@ -210,30 +200,7 @@ export default function Dashboard() {
         <h2 className='text-xl font-semibold my-4 text-center'>
           Monitor your voting process here
         </h2>
-        <div className='dash content flex flex-warp align-center justify-between text-center mx-36 my-2'>
-          <div className=' w-1/3 text-center align-center h-auto relative'>
-            {/* <div className='circle one w-32 h-32 my-6 ml-16'></div>
-            <span className='text-2xl font-semibold text-center p-8 absolute'>
-              500
-            </span>
-            <p className='font-normal text-base'>Number of registered voters</p> */}
-            <Doughnut data={data}/>
-          </div>
-          <div className=' w-1/3 text-center align-center h-auto relative'>
-            <div className='circle two w-32 h-32 my-6 ml-16'></div>
-            <span className=' text-2xl font-semibold text-center p-8 absolute'>
-              480
-            </span>
-            <p>Total Number of votes</p>
-          </div>
-          <div className='  w-1/3 text-center align-center h-auto relative'>
-            <div className='circle three w-32 h-32 my-6 ml-16'></div>
-            <span className=' three text-2xl font-semibold text-center p-8 absolute item-center'>
-              5
-            </span>
-            <p>Number of registered Candidates</p>
-          </div>
-        </div>
+        <DoughnutChart/>
       </div>
     </div>
   );
