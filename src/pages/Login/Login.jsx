@@ -47,7 +47,7 @@ const Login = () => {
       history.push("/dashboard");
     },
     onError: () => {
-      toast.error("there was an error");
+      toast.error("Invalid credentials, Please check your Id and Password.");
     },
     onSettled: () => {
       queryClient.invalidateQueries("create");
@@ -98,7 +98,7 @@ const Login = () => {
                   {...register("studentID", {
                     required: "student Id is Required",
                   })}
-                  className="w-1/2  h-12 rounded-full  py-3 px-6 border border-solid resize-y my-2 block"
+                  className="w-1/2  h-12 rounded-full  py-3 px-6 border border-solid resize-y my-2 block  focus:outline-none"
                   style={{ borderColor: "#93278F" }}
                 />
 
@@ -125,7 +125,7 @@ const Login = () => {
                       message: "Password must have at least 8 characters",
                     },
                   })}
-                  className="w-1/2  h-12 rounded-full py-3 px-6 border border-solid resize-y my-2"
+                  className="w-1/2  h-12 rounded-full py-3 px-6 border border-solid resize-y my-2  focus:outline-none"
                   style={{ borderColor: "#93278F", marginLeft: "-20px" }}
                 />
                 <i
