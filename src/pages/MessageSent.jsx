@@ -113,6 +113,7 @@ const MessageSent = () => {
               <input
                 type="number"
                 name="message-sent"
+                maxlength="1"
                 onChange={(e) => setCode([...code, e.target.value])}
                 className="w-20  h-20  py-3 px-6 border border-solid resize-y my-2"
                 style={{ borderColor: "#16042ACC", marginTop: "2rem" }}
@@ -120,6 +121,7 @@ const MessageSent = () => {
               <input
                 type="number"
                 name="message-sent"
+                maxlength="1"
                 onChange={(e) => setCode([...code, e.target.value])}
                 className="w-20  h-20  py-3 px-6 border border-solid resize-y my-2"
                 style={{ borderColor: "#16042ACC", marginTop: "2rem" }}
@@ -127,6 +129,7 @@ const MessageSent = () => {
               <input
                 type="number"
                 name="message-sent"
+                maxlength="1"
                 onChange={(e) => setCode([...code, e.target.value])}
                 className="w-20  h-20  py-3 px-6 border border-solid resize-y my-2"
                 style={{ borderColor: "#16042ACC", marginTop: "2rem" }}
@@ -134,6 +137,7 @@ const MessageSent = () => {
               <input
                 type="number"
                 name="message-sent"
+                maxlength="1"
                 onChange={(e) => setCode([...code, e.target.value])}
                 className="w-20  h-20  py-3 px-6 border border-solid resize-y my-2"
                 style={{ borderColor: "#16042ACC", marginTop: "2rem" }}

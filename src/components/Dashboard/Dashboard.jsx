@@ -12,7 +12,6 @@ export default function Dashboard() {
   const { user } = useAuth();
   const { data } = useResults();
 
-  console.log(data);
   return (
     <div className="w-full">
       <div className="mx-4 my-2">
@@ -200,11 +199,20 @@ export default function Dashboard() {
           </div>
         </div>
       </div>
-      <div className=" card-side w-full my-12 pb-6">
+      <div className=" card-side w-full my-12 py-6">
         <h2 className="text-xl font-semibold my-4 text-center">
           Monitor your voting process here
         </h2>
-        <DoughnutChart />
+        <div className=" w-2/3 mx-auto">
+          <DoughnutChart
+            candidates={data?.length}
+            votes={data?.reduce(
+              (previousValue, currentValue) =>
+                previousValue + currentValue.votes,
+              0
+            )}
+          />
+        </div>
       </div>
     </div>
   );

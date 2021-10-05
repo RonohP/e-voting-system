@@ -1,172 +1,100 @@
-import React from 'react';
-import { Doughnut } from 'react-chartjs-2';
+import React from "react";
+import { Doughnut } from "react-chartjs-2";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
+import { useVoters } from "../api/hooks/useVoters";
 
-function DoughnutChart() {
+function DoughnutChart({ candidates, votes }) {
+  const { data } = useVoters();
 
-  const VotersData = {
-    name: 'Voters',
-    labels: ['Voters'],
-    datasets: [
-      {
-        label: 'No. of Voters',
-        data: [500],
-        backgroundColor: ['rgba(6, 20, 147, 0.8)'],
-        borderWidth: 0,
-      },
-    ],
-    options: {
-      responsive: true,
-      plugins: {
-        legend: { display: false },
-        title: {
-          display: true,
-          text: 'Number of registered voters',
-          position: 'bottom',
-          fontSize: 30,
-        },
-      },
-    },
-    plugins: [
-      {
-        beforeDraw: function (chart) {
-          var width = chart.width,
-            height = chart.height,
-            ctx = chart.ctx;
-
-          ctx.restore();
-          var fontSize = (height / 160).toFixed(2);
-          ctx.font = fontSize + 'em sans-serif';
-          ctx.textBaseline = 'middle';
-
-          var text = '500',
-            textX = Math.round((width - ctx.measureText(text).width) / 2),
-            textY = height / 2;
-
-          ctx.fillText(text, textX, textY);
-          ctx.save();
-        },
-      },
-    ],
-  };
-  const VotesData = {
-    name: 'Votes',
-    labels: ['Votes'],
-    datasets: [
-      {
-        label: 'Total Number of Votes',
-        data: [480, 20],
-        backgroundColor: ['rgba(35, 135, 81, 0.9)', 'rgba(144, 254, 155, 0.5)'],
-        borderWidth: 0,
-      },
-    ],
-    options: {
-      responsive: true,
-      plugins: {
-        legend: { display: false },
-        title: {
-          display: true,
-          text: 'Total Number of votes',
-          position: 'bottom',
-          fontSize: 30,
-        },
-      },
-    },
-    plugins: [
-      {
-        beforeDraw: function (chart) {
-          var width = chart.width,
-            height = chart.height,
-            ctx = chart.ctx;
-
-          ctx.restore();
-          var fontSize = (height / 160).toFixed(2);
-          ctx.font = fontSize + 'em sans-serif';
-          ctx.textBaseline = 'middle';
-
-          var text = '480',
-            textX = Math.round((width - ctx.measureText(text).width) / 2),
-            textY = height / 2;
-
-          ctx.fillText(text, textX, textY);
-          ctx.save();
-        },
-      },
-    ],
-  };
-  const CandidateData = {
-    name: 'Candidates',
-    labels: ['Candidates'],
-    datasets: [
-      {
-        label: 'No. of Candidates',
-        data: [495, 5],
-        backgroundColor: ['#F2FCB3', '#E5E941'],
-        borderWidth: 0,
-      },
-    ],
-    options: {
-      responsive: true,
-      plugins: {
-        legend: { display: false },
-        title: {
-          display: true,
-          text: 'Number of registered Candidates',
-          position: 'bottom',
-          fontSize: 30,
-        },
-      },
-    },
-    plugins: [
-      {
-        beforeDraw: function (chart) {
-          var width = chart.width,
-            height = chart.height,
-            ctx = chart.ctx;
-
-          ctx.restore();
-          var fontSize = (height / 160).toFixed(2);
-          ctx.font = fontSize + 'em sans-serif';
-          ctx.textBaseline = 'middle';
-
-          var text = '5',
-            textX = Math.round((width - ctx.measureText(text).width) / 2),
-            textY = height / 2;
-
-          ctx.fillText(text, textX, textY);
-          ctx.save();
-        },
-      },
-    ],
-  };
-  
   return (
-    <div className='content flex flex-warp align-center justify-between text-center'>
-      <div className='w-1/3 text-center align-center h-auto my-8 relative'>
-        <div className='py-10 px-10'>
-          <Doughnut
-            data={VotersData}
-            options={VotersData.options}
-            plugins={VotersData.plugins}
-          />
-        </div>
+    <div className="content flex flex-warp align-center h-1/3 justify-between text-center">
+      <div className="w-56 h-56 text-center align-center my-8 relative">
+        <CircularProgressbar
+          value={data?.length}
+          maxValue={5}
+          text={data?.length}
+          strokeWidth={20}
+          styles={buildStyles({
+            rotation: 0.25,
+
+            strokeLinecap: "butt",
+
+            textSize: "16px",
+
+            pathTransitionDuration: 0.5,
+
+            // Can specify path transition in more detail, or remove it entirely
+            // pathTransition: 'none',
+
+            // Colors
+            pathColor: `rgba(6, 20, 147, 0.8)`,
+            textColor: "#000",
+            trailColor: "#3e98c7",
+            backgroundColor: "#3e98c7",
+          })}
+        />
+        <h2 className="text-xl font-semibold my-4 text-center">
+          Number of registered voters
+        </h2>
       </div>
-      <div className='w-1/3 text-center align-center h-auto my-8 relative'>
-        <div className='py-10 px-10'>
-          <Doughnut
-            data={VotesData}
-            options={VotesData.options}
-            plugins={VotesData.plugins}
-          />
-        </div>
+      <div className="w-56 h-56  text-center align-center h-auto my-8 relative">
+        <CircularProgressbar
+          value={votes}
+          maxValue={10}
+          text={votes}
+          strokeWidth={20}
+          styles={buildStyles({
+            rotation: 0.25,
+
+            strokeLinecap: "butt",
+
+            textSize: "16px",
+
+            pathTransitionDuration: 0.5,
+
+            // Can specify path transition in more detail, or remove it entirely
+            // pathTransition: 'none',
+
+            // Colors
+            pathColor: `rgba(59, 141, 86)`,
+            textColor: "#000",
+            trailColor: `rgba(171, 253, 180`,
+            backgroundColor: "#3e98c7",
+          })}
+        />
+        <h2 className="text-xl font-semibold my-4 text-center">
+          Total Number of Votes
+        </h2>
       </div>
-      <div className='w-1/3 text-center align-center h-auto my-8 relative'>
-        <div className='py-10 px-10'>
-          <Doughnut
-            data={CandidateData}
-            options={CandidateData.options}
-            plugins={CandidateData.plugins}
-          />
-        </div>
+      <div className="w-56 h-56  text-center align-center h-auto my-8 relative">
+        <CircularProgressbar
+          value={candidates}
+          maxValue={5}
+          text={candidates}
+          strokeWidth={20}
+          styles={buildStyles({
+            rotation: 0.25,
+
+            strokeLinecap: "butt",
+
+            textSize: "16px",
+
+            pathTransitionDuration: 0.5,
+
+            // Can specify path transition in more detail, or remove it entirely
+            // pathTransition: 'none',
+
+            // Colors
+            pathColor: `rgba(229, 233, 65)`,
+            textColor: "#000",
+            trailColor: "#d6d6d6",
+            backgroundColor: "#3e98c7",
+          })}
+        />
+        <h2 className="text-xl font-semibold my-4 text-center">
+          Number of registered Candidates
+        </h2>
       </div>
     </div>
   );
