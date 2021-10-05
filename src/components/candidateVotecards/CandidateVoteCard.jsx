@@ -9,8 +9,13 @@ import { VOTE_URL } from "../../api/urls";
 import { useAxios } from "../../api/hooks/useAxios";
 import { useAuth } from "../../utils/hooks/useAuth";
 
-const CandidateVoteCard = ({ image, name, jobTitle, candidateInfo, isDashBoard }) => {
-  
+const CandidateVoteCard = ({
+  image,
+  name,
+  jobTitle,
+  candidateInfo,
+  isDashBoard,
+}) => {
   const axios = useAxios();
   const { user } = useAuth();
   const queryClient = useQueryClient();
@@ -59,23 +64,24 @@ const CandidateVoteCard = ({ image, name, jobTitle, candidateInfo, isDashBoard }
         <button
           onClick={() => setModalIsOpen(true)}
           className="w-40 rounded-md h-14  py-3 px-6 border border-solid resize-y my-2 "
-         
-          style={{backgroundColor:isDashBoard? "#fffff":'#93278F',color:isDashBoard? "#000":'#ffff',  borderColor: "#93278F" }}
+          style={{
+            backgroundColor: isDashBoard ? "#fffff" : "#93278F",
+            color: isDashBoard ? "#000" : "#ffff",
+            borderColor: "#93278F",
+          }}
         >
           View Details
         </button>
-        { isDashBoard
-          ?
+        {isDashBoard ? (
           <button
-          onClick={() => handleVote()}
+            onClick={() => handleVote()}
             className="w-40  h-14 rounded-md  py-3 px-6 border border-solid resize-y my-2 ml-7"
-
-          style={{ backgroundColor: "#93278F" }}
-        >
-          {" "}
-          Vote
-        </button>: null}
-       
+            style={{ backgroundColor: "#93278F" }}
+          >
+            {" "}
+            Vote
+          </button>
+        ) : null}
       </div>
       <ModalComponent
         isOpen={modalIsOpen}
