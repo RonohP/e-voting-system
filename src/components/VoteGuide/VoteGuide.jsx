@@ -1,4 +1,7 @@
 import React from 'react';
+import EligibleVote from './EligibleVote';
+import DenyVote from './DenyVote';
+import VoteConduct from './VoteConduct';
 
 export default function VoteGuide() {
   return (
@@ -11,46 +14,18 @@ export default function VoteGuide() {
           <p className='text-base mx-4 my-6 font-medium md:text-lg xl:text-xl 2xl:text-2xl'>
             You’re only eligible to register as a voter:
           </p>
-          <li className=' text-xs mx-10 my-4 sm:text-sm md:text-base xl:text-lg 2xl:text-xl'>
-            If you are a student in this school, undertaking a course of your
-            choice in your academic years
-          </li>
+          <EligibleVote/>
           <p className='text-base mx-4 my-6 font-medium md:text-lg xl:text-xl 2xl:text-2xl'>
             When you can be denied registration:
           </p>
-          <li className='text-xs mx-10 my-4 sm:text-sm md:text-base xl:text-lg 2xl:text-xl'>
-            {' '}
-            If you are not a student of this school
-          </li>
-          <li className='text-xs mx-10 my-4 sm:text-sm md:text-base xl:text-lg 2xl:text-xl'>
-            If the school declares you to have violated the voters requirements
-            (This may include general misconduct)
-          </li>
+          <DenyVote/>
         </ul>
 
         <ul className='mx-6 my-10'>
           <p className='text-lg mx-4 my-6 font-semibold md:text-xl xl:text-2xl 2xl:text-3xl'>
             Conduct During Election
           </p>
-
-          <li className='text-xs mx-4 my-4 sm:text-sm md:text-base xl:text-lg 2xl:text-xl'>
-            All Voters are expected to familiarize with the candidate of their
-            choice and read their campaign promise
-          </li>
-          <li className='text-xs mx-4 my-4 sm:text-sm md:text-base xl:text-lg 2xl:text-xl'>
-            All Voters are expected to vote for just one candidate
-          </li>
-          <li className='text-xs mx-4 my-4 sm:text-sm md:text-base xl:text-lg 2xl:text-xl'>
-            All Voters are expected to to conduct themselves properly offline
-            and Online during the election
-          </li>
-          <li className='text-xs mx-4 my-4 sm:text-sm md:text-base xl:text-lg 2xl:text-xl'>
-            Note no Winner is declared until after the voting session and would
-            be announced by the WTSC Electoral board
-          </li>
-          <li className='text-sm mx-4 my-4 sm:text-sm md:text-base xl:text-lg 2xl:text-xl'>
-            Report any problem and Ask questions if needed
-          </li>
+          <VoteConduct/>
         </ul>
       </div>
     </section>
