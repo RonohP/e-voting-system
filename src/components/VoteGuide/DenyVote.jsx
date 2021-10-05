@@ -10,13 +10,18 @@ class  DenyVote extends React.Component {
       ];
   
       return (
-        <ul>
+        <>
           {denyList.map(deny => {
             return (
-              <li className=' mx-6 mb-6' key={deny.key}>{deny.description}</li>
+              <li
+                className='text-xs mx-10 my-4 sm:text-sm md:text-base xl:text-lg 2xl:text-xl'
+                key={deny.key}
+              >
+                {deny.description}
+              </li>
             );
           })}
-        </ul>
+        </>
       );
     }
   }
