@@ -3,7 +3,7 @@ import { useState } from "react";
 import ModalComponent from "../Modal";
 import Swal from "sweetalert2";
 import { toast } from "react-toastify";
-import { useMutation, useQueryClient } from "react-query";
+import { useMutation } from "react-query";
 import VoteSuccessImg from "../../images/voteSuccess.svg";
 import { VOTE_URL } from "../../api/urls";
 import { useAxios } from "../../api/hooks/useAxios";

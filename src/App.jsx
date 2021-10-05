@@ -10,7 +10,7 @@ import Login from "./pages/Login/Login";
 import PageNotFound from "./pages/PageNotFound";
 import ThankYou from "./pages/ThankYou";
 import Terms from "./components/Terms/Terms";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy";
 import ForgotPassword from "./pages/ForgotPassword";
