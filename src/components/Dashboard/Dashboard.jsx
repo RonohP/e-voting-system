@@ -5,6 +5,7 @@ import { Switch, Route, NavLink } from 'react-router-dom';
 import { useAuth } from '../../utils/hooks/useAuth';
 import BarChart from '../BarChart';
 import {Doughnut} from 'react-chartjs-2';
+import { useResults } from '../../api/hooks/useResults';
 
 const data = {
   labels: ['Voters'],
@@ -19,6 +20,9 @@ const data = {
 
 export default function Dashboard() {
   const { user } = useAuth();
+  const { data } = useResults();
+
+  console.log(data);
   return (
     <div className='w-full'>
       <div className='mx-4 my-2'>
@@ -202,7 +206,7 @@ export default function Dashboard() {
         <div className='card-side mx-2 p-4 w-1/2'>
           <h2 className='text-xl font-semibold my-4'>Live Results</h2>
           <div className='left relative'>
-            <BarChart />
+            <BarChart results={data} />
           </div>
         </div>
       </div>

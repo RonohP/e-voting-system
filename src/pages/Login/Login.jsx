@@ -41,7 +41,6 @@ const Login = () => {
 
   const { mutate } = useMutation(loginuser, {
     onSuccess: (data) => {
-      console.log(data, "<<<>>>>");
       signin(data, data.token);
       toast.success("login successful");
       history.push("/dashboard");

@@ -4,13 +4,66 @@ import MessageSentImg from "../images/messageSent.svg";
 import { toast } from "react-toastify";
 import { Link, useHistory } from "react-router-dom";
 import EyeImg from "../images/eye.svg";
+import { useState, useEffect } from "react";
+import { useForm } from "react-hook-form";
+import { useAxios } from "../api/hooks/useAxios";
+import { RESET_PASSWORD_URL, VALIDATE_TOKEN_URL } from "../api/urls";
+import { useMutation, useQueryClient } from "react-query";
 
 const MessageSent = () => {
   const history = useHistory();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+  const axios = useAxios();
+  const [code, setCode] = useState([]);
+  const [token, setToken] = useState([]);
+  const [isTokenValid, setTokenvalid] = useState(false);
+
+  useEffect(() => {
+    if (code.length === 4) {
+      setTokenvalid(true);
+      const token = Number(code.join(""));
+
+      setToken(token);
+
+      axios
+        .post(`${VALIDATE_TOKEN_URL}`, { token: token })
+        .then((res) => {
+          toast.success("Code is valid please reset you password");
+          setTokenvalid(true);
+        })
+        .catch((error) => {
+          toast.error("invalid token please try again");
+        });
+    }
+    return () => {};
+  }, [code]);
+
+  const resetPassword = async (data) => {
+    const { data: response } = await axios.post(`${RESET_PASSWORD_URL}`, data);
+    return response;
+  };
+
+  const { mutate } = useMutation(resetPassword, {
+    onSuccess: (data) => {
+      toast.success(data.message);
+      history.push("/login");
+    },
+    onError: () => {
+      toast.error("there was an error");
+    },
+    onSettled: () => {
+      // queryClient.invalidateQueries("create");
+    },
+  });
 
   const handleLogin = (userData) => {
-    toast.success("login successful");
-    history.push("/home");
+    const data = { ...userData, token: token };
+    mutate(data);
   };
   return (
     <>
@@ -60,24 +113,28 @@ const MessageSent = () => {
               <input
                 type="number"
                 name="message-sent"
+                onChange={(e) => setCode([...code, e.target.value])}
                 className="w-20  h-20  py-3 px-6 border border-solid resize-y my-2"
                 style={{ borderColor: "#16042ACC", marginTop: "2rem" }}
               />
               <input
                 type="number"
                 name="message-sent"
+                onChange={(e) => setCode([...code, e.target.value])}
                 className="w-20  h-20  py-3 px-6 border border-solid resize-y my-2"
                 style={{ borderColor: "#16042ACC", marginTop: "2rem" }}
               />
               <input
                 type="number"
                 name="message-sent"
+                onChange={(e) => setCode([...code, e.target.value])}
                 className="w-20  h-20  py-3 px-6 border border-solid resize-y my-2"
                 style={{ borderColor: "#16042ACC", marginTop: "2rem" }}
               />
               <input
                 type="number"
                 name="message-sent"
+                onChange={(e) => setCode([...code, e.target.value])}
                 className="w-20  h-20  py-3 px-6 border border-solid resize-y my-2"
                 style={{ borderColor: "#16042ACC", marginTop: "2rem" }}
               />
@@ -85,37 +142,55 @@ const MessageSent = () => {
             <p style={{ color: "#16042ACC", marginTop: "3rem" }}>
               Didn't receive code?{" "}
               <span style={{ color: "#a45bb1" }}>
-                <Link >Resend now </Link>
+                <Link>Resend now </Link>
               </span>
-              <h2 style={{ marginTop: "2rem" }}>Enter new Password </h2>
-              <div style={{ position: "relative" }}>
-                <input
-                  type="text"
-                  name="forgot-password"
-                  placeholder="Password"
-                  className="w-1/2  h-12 rounded-full py-3 px-6 border border-solid resize-y my-2"
-                  style={{ borderColor: "#9453a0", marginTop: "1rem" }}
-                />
-                <span
-                  style={{
-                    position: "absolute",
-                    left: 310,
-                    bottom: 20,
-                    cursor: "pointer",
-                  }}
-                >
-                  <img src={EyeImg} alt="eye svg" />
-                </span>
-              </div>
+              {isTokenValid && (
+                <h2 style={{ marginTop: "2rem" }}>Enter new Password </h2>
+              )}
+              {isTokenValid && (
+                <div style={{ position: "relative" }}>
+                  <input
+                    type="text"
+                    name="password"
+                    placeholder="Password"
+                    {...register("password", {
+                      required: "You must specify a password",
+                      minLength: {
+                        value: 8,
+                        message: "Password must have at least 8 characters",
+                      },
+                    })}
+                    className="w-1/2  h-12 rounded-full py-3 px-6 border border-solid resize-y my-2"
+                    style={{ borderColor: "#9453a0", marginTop: "1rem" }}
+                  />
+                  <span
+                    style={{
+                      position: "absolute",
+                      left: 310,
+                      bottom: 20,
+                      cursor: "pointer",
+                    }}
+                  >
+                    <img src={EyeImg} alt="eye svg" />
+                  </span>
+                  {errors.password && (
+                    <p className="errorMessage" style={{ color: "red" }}>
+                      {errors.password.message}
+                    </p>
+                  )}
+                </div>
+              )}
             </p>
-            <button
-              type="submit"
-              onClick={handleLogin}
-              className="register-btn border w-1/2  h-12  rounded-full py-2 px-8 border-solid"
-              style={{ marginTop: "2rem" }}
-            >
-              Save and Login
-            </button>
+            {isTokenValid && (
+              <button
+                type="submit"
+                onClick={handleSubmit(handleLogin)}
+                className="register-btn border w-1/2  h-12  rounded-full py-2 px-8 border-solid"
+                style={{ marginTop: "2rem" }}
+              >
+                Save and Login
+              </button>
+            )}
           </div>
         </div>
       </div>

@@ -1,17 +1,7 @@
 import React from 'react';
 import {Bar} from 'react-chartjs-2';
 
-const data = {
-  labels: ['Kitan', 'Layla', 'Wawira', 'Abena', 'Zawadi'],
-  color: '#fff',
-  datasets: [
-    {
-      label: 'No. of Votes',
-      data: [21, 5, 19, 12, 38],
-      backgroundColor: ['#ffc7ca', '#f1fbb7', '#b8d0ff', '#e5ffae', '#a37db6'],
-    },
-  ],
-};
+
 
 const options = {
   responsive: true,
@@ -71,7 +61,18 @@ const options = {
   },
 };
 
-function BarChart() {
+function BarChart({results}) {
+  const data = {
+  labels: results?.map(item => item.names),
+  color: '#fff',
+  datasets: [
+    {
+      label: 'No. of Votes',
+      data:  results?.map(item => item.votes),
+      backgroundColor: ['#ffc7ca', '#f1fbb7', '#b8d0ff', '#e5ffae', '#a37db6'],
+    },
+  ],
+};
     return (
       <div className='chart-div h-96 w-full p-10 absolute'>
         <Bar data={data} options={options} />

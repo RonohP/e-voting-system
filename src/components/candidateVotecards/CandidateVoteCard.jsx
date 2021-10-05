@@ -9,9 +9,11 @@ import { VOTE_URL } from "../../api/urls";
 import { useAxios } from "../../api/hooks/useAxios";
 import { useAuth } from "../../utils/hooks/useAuth";
 
-const CandidateVoteCard = ({ image, name, jobTitle, candidateInfo }) => {
+const CandidateVoteCard = ({ image, name, jobTitle, candidateInfo, isDashBoard }) => {
+  
   const axios = useAxios();
   const { user } = useAuth();
+  const queryClient = useQueryClient();
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -35,7 +37,7 @@ const CandidateVoteCard = ({ image, name, jobTitle, candidateInfo }) => {
       toast.error(err.response.data);
     },
     onSettled: () => {
-      // queryClient.invalidateQueries("cast vote");
+      queryClient.invalidateQueries("results");
     },
   });
 
@@ -56,19 +58,24 @@ const CandidateVoteCard = ({ image, name, jobTitle, candidateInfo }) => {
       <div className="flex mt-12 ">
         <button
           onClick={() => setModalIsOpen(true)}
-          className="w-40 rounded-md h-14  py-3 px-6 border border-solid resize-y my-2 mr-7"
-          style={{ borderColor: "#93278F" }}
+          className="w-40 rounded-md h-14  py-3 px-6 border border-solid resize-y my-2 "
+         
+          style={{backgroundColor:isDashBoard? "#fffff":'#93278F',color:isDashBoard? "#000":'#ffff',  borderColor: "#93278F" }}
         >
           View Details
         </button>
-        <button
+        { isDashBoard
+          ?
+          <button
           onClick={() => handleVote()}
-          className="w-40  h-14 rounded-md  py-3 px-6 border border-solid resize-y my-2"
+            className="w-40  h-14 rounded-md  py-3 px-6 border border-solid resize-y my-2 ml-7"
+
           style={{ backgroundColor: "#93278F" }}
         >
           {" "}
           Vote
-        </button>
+        </button>: null}
+       
       </div>
       <ModalComponent
         isOpen={modalIsOpen}
