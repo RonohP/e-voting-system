@@ -6,36 +6,31 @@ import { useForm } from "react-hook-form";
 import { FORGOT_PASSWORD_URL } from "../api/urls";
 import { useAxios } from "../api/hooks/useAxios";
 import { toast } from "react-toastify";
-import { useMutation, useQueryClient } from "react-query";
+import { useMutation } from "react-query";
 
 const ForgotPassword = () => {
   const history = useHistory();
   const axios = useAxios();
 
-   const {
+  const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
-  
 
-
-    const getResetToken = async (data) => {
+  const getResetToken = async (data) => {
     const { data: response } = await axios.post(`${FORGOT_PASSWORD_URL}`, data);
     return response;
   };
 
-  const { mutate} = useMutation(getResetToken, {
+  const { mutate } = useMutation(getResetToken, {
     onSuccess: (data) => {
       console.log(data);
       toast.success(data.message);
-    history.push("/messageSent");
-      
+      history.push("/messageSent");
     },
     onError: () => {
       toast.error("there was an error");
-      
     },
     onSettled: () => {
       // queryClient.invalidateQueries("create");
@@ -94,17 +89,17 @@ const ForgotPassword = () => {
               type="text"
               name="email"
               placeholder="Enter school mail Address"
-               {...register("email", {
-                    required: "email  is Required",
-                  })}
+              {...register("email", {
+                required: "email  is Required",
+              })}
               className="w-1/2 focus:outline-none  h-12 rounded-full py-3 px-6 border border-solid resize-y my-2"
               style={{ borderColor: "#16042ACC", marginTop: "2rem" }}
             />
-             {errors.email && (
-                  <p className="errorMessage" style={{ color: "red" }}>
-                    {errors.email.message}
-                  </p>
-                )}
+            {errors.email && (
+              <p className="errorMessage" style={{ color: "red" }}>
+                {errors.email.message}
+              </p>
+            )}
             <button
               onClick={handleSubmit(handleMessageSent)}
               className="register-btn border w-1/2  h-12  rounded-full py-2 px-8 border-solid"

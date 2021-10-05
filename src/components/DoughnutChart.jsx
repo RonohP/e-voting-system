@@ -1,5 +1,4 @@
 import React from "react";
-import { Doughnut } from "react-chartjs-2";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { useVoters } from "../api/hooks/useVoters";

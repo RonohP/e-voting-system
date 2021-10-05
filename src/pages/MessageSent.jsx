@@ -8,14 +8,13 @@ import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useAxios } from "../api/hooks/useAxios";
 import { RESET_PASSWORD_URL, VALIDATE_TOKEN_URL } from "../api/urls";
-import { useMutation, useQueryClient } from "react-query";
+import { useMutation } from "react-query";
 
 const MessageSent = () => {
   const history = useHistory();
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
   const axios = useAxios();
@@ -25,7 +24,6 @@ const MessageSent = () => {
 
   useEffect(() => {
     if (code.length === 4) {
-      setTokenvalid(true);
       const token = Number(code.join(""));
 
       setToken(token);
@@ -41,7 +39,7 @@ const MessageSent = () => {
         });
     }
     return () => {};
-  }, [code]);
+  }, [code, axios]);
 
   const resetPassword = async (data) => {
     const { data: response } = await axios.post(`${RESET_PASSWORD_URL}`, data);

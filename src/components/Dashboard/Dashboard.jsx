@@ -4,7 +4,6 @@ import VotingRafiki from "../../images/Voting-rafiki.svg";
 import { Switch, Route, NavLink } from "react-router-dom";
 import { useAuth } from "../../utils/hooks/useAuth";
 import BarChart from "../BarChart";
-import { Doughnut } from "react-chartjs-2";
 import { useResults } from "../../api/hooks/useResults";
 import DoughnutChart from "../DoughnutChart";
 
