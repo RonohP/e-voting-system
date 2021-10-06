@@ -1,7 +1,62 @@
 import React from 'react';
 import './LiveRes.css';
 import { Link } from 'react-router-dom';
-import BarChart from '../BarChart';
+// import BarChart from '../BarChart';
+import { Bar } from 'react-chartjs-2';
+
+const data = {
+  labels: ['Kitan', 'Layla', 'Wawira', 'Abena', 'Zawadi'],
+  color: '#fff',
+  datasets: [
+    {
+      label: 'No. of Votes',
+      data: [21, 5, 19, 12, 38],
+      backgroundColor: ['#ffc7ca', '#f1fbb7', '#b8d0ff', '#e5ffae', '#a37db6'],
+    },
+  ],
+};
+
+const options = {
+  responsive: true,
+  plugins: {
+    legend: {
+      display: false,
+    },
+  },
+  scales: {
+    x: {
+      display: true,
+      title: {
+        display: true,
+        text: 'Candidates',
+        color: '#fff',
+        font: {
+          size: 20,
+          weight: 'bold',
+          lineHeight: 1.2,
+        },
+        padding: { top: 20, left: 0, right: 0, bottom: 0 },
+      },
+    },
+    y: {
+      display: true,
+      title: {
+        display: true,
+        text: 'No. of Votes',
+        color: '#fff',
+        font: {
+          size: 20,
+          weight: 'bold',
+          lineHeight: 1.2,
+        },
+        padding: { top: 30, left: 0, right: 0, bottom: 0 },
+      },
+      ticks: {
+        beginAtZero: true,
+      },
+    },
+  },
+};
 
 function LiveRes() {
   return (
@@ -9,7 +64,8 @@ function LiveRes() {
       <div className='max-width'>
         <div className='content flex flex-warp align-center justify-between'>
           <div className='left w-1/2 relative'>
-            <BarChart />
+            {/* <BarChart /> */}
+            <Bar data={data} options={options} />
           </div>
           <div className='right w-1/2'>
             <div className='live-text p-4 mx-6 my-6'>
