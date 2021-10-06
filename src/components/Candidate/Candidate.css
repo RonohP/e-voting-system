@@ -1,50 +1,59 @@
 .wrapper-flex {
-    display: flex;
+    /* display: grid;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: 50px;
+    margin: 50px; */
+
+     display: grid;
+          place-items: center;
+          margin-top: 2rem;
+          grid-template-columns: 1fr 1fr 1fr;
+          column-gap: 1rem;
+          row-gap: 2rem;
+          place-items: center;
+         justify-content: center;
   }
   
   .container {
-    overflow: hidden;
+    /* overflow: hidden;
     box-shadow: 0px 2px 8px 0px  #3d3f41;
     background-color: white;
     text-align: center;
     border-radius: 1rem;
-    width: 280px;
-    margin-top: 2rem;
+    width: 280px; */
+    /* margin-top: 2rem;
     margin-bottom: 2rem;
     margin-left: 2rem;
-    position: relative;
+    position: relative; */
 
   }
   
  
   
   .profile-img {
-    width: 8rem;
-    border-radius: 50%;
-    clip-path: circle(50px at center);
-     margin-top: 4.5rem;
+    /* width: 8rem;
+    border-radius: 50%; */
+    /* clip-path: circle(50px at center); */
+     /* margin-top: 4.5rem;
      margin-left: 70px;
-     margin-right: 60px;
-    justify-content: center; 
-    align-items: center; 
+     margin-right: 60px; */
+    /* justify-content: center; 
+    align-items: center;  */
   }
   
   .name {
-    font-weight: bold;
+    /* font-weight: bold;
     font-size: 1.5rem;
     text-align: center;
-    margin: 10px;
+    margin: 10px; */
   }
   
   .description {
-    margin: 1rem 2rem;
+    /* margin: 1rem 2rem;
     font-size: 0.9rem;
     text-align: center;
-    margin: 10px;
+    margin: 10px; */
   }
   
   

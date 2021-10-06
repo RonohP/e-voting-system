@@ -71,6 +71,7 @@ export default function Vote() {
                 name={candidate?.firstName + " " + candidate?.lastName}
                 jobTitle={candidate?.school}
                 candidateInfo={candidate}
+                 isDashBoard={true}
               />
             );
           } else {
@@ -81,6 +82,7 @@ export default function Vote() {
                   name={candidate?.firstName + " " + candidate?.lastName}
                   jobTitle={candidate?.school}
                   candidateInfo={candidate}
+                  isDashBoard={true}
                 />
               </div>
             );
