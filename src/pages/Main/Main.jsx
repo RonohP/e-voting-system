@@ -17,7 +17,7 @@ export default function Main() {
         <hr />
         <Switch>
           <Route path='/dashboard'>
-            <Dashboard/>
+            <Dashboard />
           </Route>
           <Route exact path='/vote'>
             <Vote />
@@ -26,8 +26,9 @@ export default function Main() {
             <VoteGuide />
           </Route>
           <Route exact path='/settings'>
-            < Settings/>
+            <Settings />
           </Route>
+          <Route component={Dashboard} />
         </Switch>
       </div>
     </div>

@@ -90,13 +90,12 @@
 .calendar-active::before{
     position: absolute;
     content: '';
-    bottom:30px;
-    left:-31px;
-    width: 64px;
+    bottom:-5px;
+    width: 70px;
     height: 3px;
     background: #460D86;
     z-index: 1; 
-    opacity: 0;
+    text-align: center;
 }
 
 .activedash::before{
@@ -104,7 +103,7 @@
     content: '';
     bottom: -5px;
     left:6px;
-    width: 64px;
+    width: 70px;
     height: 3px;
     background: #460D86;
     z-index: 1; 
