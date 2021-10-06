@@ -40,27 +40,27 @@ export default function Dashboard() {
             <div className="flex justify-evenly text-center">
               <NavLink
                 exact
-                to="/today"
-                activeClassName="calendar-active"
-                className=" activedash relative mr-4 text-lg font-semibold p-4 my-1"
+                to={'/today'|| '/dashboard'}
+                activeClassName='calendar-active text-gray-900'
+                className='relative mr-4 text-lg font-semibold p-4 my-1 text-gray-300'
               >
                 Today
               </NavLink>
               <NavLink
                 exact
-                to="/nextWeek"
-                activeClassName="calendar-active"
-                className="mr-4 text-lg font-semibold p-4 opacity-40 my-1"
+                to='/nextWeek'
+                activeClassName='calendar-active text-gray-900'
+                className='mr-4 text-lg font-semibold p-4 text-gray-300 my-1 relative'
               >
                 Next Week
               </NavLink>
               <NavLink
                 exact
-                to="/thisMonth"
-                activeClassName="calendar-active"
-                className="mr-4 text-lg font-semibold p-4 opacity-40 my-1"
+                to='/nextMonth'
+                activeClassName='calendar-active text-gray-900'
+                className='mr-4 text-lg font-semibold p-4 text-gray-300 my-1 relative'
               >
-                This Month
+                Next Month
               </NavLink>
             </div>
             <hr />
@@ -71,31 +71,99 @@ export default function Dashboard() {
               <p>10:00</p>
               <p>11:00</p>
             </div>
-            <div className="mx-4 my-4 flex ">
-              <div
-                className="w-12 h-auto font-semibold text-2xl text-center mx-10 my-8"
-                style={{
-                  color: "#1A56B0",
-                  fontFamily: "Work Sans",
-                }}
-              >
-                <p>27 Sept</p>
-              </div>
-              <div
-                className="w-56 text-sm font-normal mx-4 my-8"
-                style={{
-                  background: "rgba(26, 86, 176, 0.1)",
-                  borderRadius: "5px",
-                  color: "#1A56B0",
-                }}
-              >
-                <p className="pl-4 py-2">President Student Council</p>
-              </div>
-            </div>
             <Switch>
-              <Route exact path="/today"></Route>
-              <Route exact path="/nextWeek"></Route>
-              <Route exact path="/thisMonth"></Route>
+              <Route exact path='/dashboard'>
+                <div className='mx-4 my-4 flex '>
+                  <div
+                    className='w-12 h-auto font-semibold text-2xl text-center mx-10 my-8'
+                    style={{
+                      color: '#1A56B0',
+                      fontFamily: 'Work Sans',
+                    }}
+                  >
+                    <p>{new Date().getDate()} Oct</p>
+                  </div>
+                  <div
+                    className='w-56 text-sm font-normal mx-4 my-8'
+                    style={{
+                      background: 'rgba(26, 86, 176, 0.1)',
+                      borderRadius: '5px',
+                      color: '#1A56B0',
+                    }}
+                  >
+                    <p className='pl-4 py-2'>President Student Council</p>
+                  </div>
+                </div>
+              </Route>
+              <Route exact path='/today'>
+                <div className='mx-4 my-4 flex '>
+                  <div
+                    className='w-12 h-auto font-semibold text-2xl text-center mx-10 my-8'
+                    style={{
+                      color: '#1A56B0',
+                      fontFamily: 'Work Sans',
+                    }}
+                  >
+                    <p>{new Date().getDate()} Oct</p>
+                  </div>
+                  <div
+                    className='w-56 text-sm font-normal mx-4 my-8'
+                    style={{
+                      background: 'rgba(26, 86, 176, 0.1)',
+                      borderRadius: '5px',
+                      color: '#1A56B0',
+                    }}
+                  >
+                    <p className='pl-4 py-2'>President Student Council</p>
+                  </div>
+                </div>
+              </Route>
+              <Route exact path='/nextWeek'>
+                <div className='mx-4 my-4 flex '>
+                  <div
+                    className='w-12 h-auto font-semibold text-2xl text-center mx-10 my-8'
+                    style={{
+                      color: '#1A56B0',
+                      fontFamily: 'Work Sans',
+                    }}
+                  >
+                    <p>{new Date().getDate() + 10} Oct</p>
+                  </div>
+                  <div
+                    className='w-56 text-sm font-normal mx-4 my-8'
+                    style={{
+                      background: 'rgba(26, 86, 176, 0.1)',
+                      borderRadius: '5px',
+                      color: '#1A56B0',
+                    }}
+                  >
+                    <p className='pl-4 py-2'>Student Council Election</p>
+                  </div>
+                </div>
+              </Route>
+              <Route exact path='/nextMonth'>
+                <div className='mx-4 my-4 flex '>
+                  <div
+                    className='w-12 h-auto font-semibold text-2xl text-center mx-10 my-8'
+                    style={{
+                      color: '#1A56B0',
+                      fontFamily: 'Work Sans',
+                    }}
+                  >
+                    <p>{new Date().getDate()} Nov</p>
+                  </div>
+                  <div
+                    className='w-56 text-sm font-normal mx-4 my-8'
+                    style={{
+                      background: 'rgba(26, 86, 176, 0.1)',
+                      borderRadius: '5px',
+                      color: '#1A56B0',
+                    }}
+                  >
+                    <p className='pl-4 py-2'>Senate Selection</p>
+                  </div>
+                </div>
+              </Route>
             </Switch>
           </div>
         </div>

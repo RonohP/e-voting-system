@@ -68,92 +68,111 @@ const Register = () => {
 
   return (
     <div>
-      <div className="maincontainer">
-        <nav className="navbar flex justify-between item- center mb-10 h-16 w-full sm:pl-2 md:pl-10 lg:pl-12 md:w-full ">
-          <Link to="/" className="flex flex-row pt-6">
-            <img src={Logo} alt="WTLogo" className="w-12 h-11" />
-            <p className="logo-text inline-block pt-6 pl-1 font-sans font-bold">
+      <div className='maincontainer'>
+        <nav className='navbar flex justify-between item- center mb-10 h-16 w-full sm:pl-2 md:pl-10 lg:pl-12 md:w-full '>
+          <Link to='/home' className='flex flex-row pt-6 mx-2'>
+            <img src={Logo} alt='WTLogo' className='w-12 h-11' />
+            <p className='logo-text inline-block pt-6 pl-1 font-sans font-bold'>
               echsters University
             </p>
           </Link>
         </nav>
-        <div className="flex mx-20 my-20 flex-row">
-          <div className="left w-1/2 h-auto p-2">
-            <img src={SignUp} alt="SignUp" />
+        <div className='flex m-6 flex-col md:flex-row md: m-12 lg:m-20'>
+          <div className='left w-full h-auto p-2 m-4 md:w-1/2 my-auto'>
+            <img src={SignUp} alt='SignUp' />
           </div>
-          <div className="right w-1/2 h-auto p-2 mt-20">
-            <h1 className="text-5xl mx-6 font-bold text-left ">Welcome!</h1>
-            <p className="text-left w-3/4  mt-10 font-normal text-lg mx-6">
+          <div className='right w-full h-auto p-2 mt-20 md:w-1/2'>
+            <h1 className='text-xl mx-6 font-bold text-center sm:text-3xl xl:text-5xl'>
+              Welcome!
+            </h1>
+            <p className='my-4 p-2 font-normal text-xs mx-4 lg:text-sm xl:text-lg xl:mx-6 xl:p-4'>
               Register as a voter on the women techsters University voting
               platform to vote in your preferred candidate.
             </p>
-            <div className="p-2">
-              <form onSubmit={(e) => e.preventDefault()} className="p-2 mx-2">
-                <label
-                  htmlFor="studentID"
-                  className=" mx-4  my-2 p-1 text-base"
-                ></label>
-                <input
-                  type="text"
-                  name="studentID"
-                  placeholder="student ID No."
-                  id="std-id"
-                  {...register("studentID", {
-                    required: "student Id is Required",
-                  })}
-                  className="w-1/2 focus:outline-none  h-12 rounded-full py-3 px-6 border border-solid resize-y my-2 block"
-                  style={{ borderColor: "#93278F" }}
-                />
+            <div className=''>
+              <form onSubmit={(e) => e.preventDefault()} className='p-2 mx-2'>
+                <div className='row'>
+                  <div className='col-25'>
+                    <label
+                      htmlFor='studentID'
+                      className='my-2 p-1 text-base inline-block xl:text-xl'
+                    >
+                      {' '}
+                      Student ID:
+                    </label>
+                  </div>
+                  <div className='col-75'>
+                    <input
+                      type='text'
+                      name='studentID'
+                      placeholder='Student ID No.'
+                      id='std-id'
+                      {...register('studentID', {
+                        required: 'student Id is Required',
+                      })}
+                      className='w-full focus:outline-none rounded-full p-3 border border-solid resize-y'
+                      style={{ borderColor: '#93278F' }}
+                    />
 
-                {errors.studentID && (
-                  <p className="errorMessage" style={{ color: "red" }}>
-                    {errors.studentID.message}
-                  </p>
-                )}
+                    {errors.studentID && (
+                      <p className='errorMessage' style={{ color: 'red' }}>
+                        {errors.studentID.message}
+                      </p>
+                    )}
+                  </div>
+                </div>
 
-                <label
-                  htmlFor="password"
-                  className="mx-2 my-2 p-1 text-base"
-                ></label>
-
-                <input
-                  type={passwordShown ? "text" : "password"}
-                  name="password"
-                  id="password"
-                  placeholder="Password"
-                  {...register("password", {
-                    required: "You must specify a password",
-                    minLength: {
-                      value: 8,
-                      message: "Password must have at least 8 characters",
-                    },
-                  })}
-                  className="w-1/2 focus:outline-none  h-12 rounded-full py-3 px-6 border border-solid resize-y my-2"
-                  style={{ borderColor: "#93278F", marginLeft: "-20px" }}
-                />
-                <i
-                  style={{ margin: "-40px", color: "#93278F" }}
-                  onClick={togglePasswordVisiblity}
-                >
-                  {eye}
-                </i>
-                {errors.password && (
-                  <p className="errorMessage" style={{ color: "red" }}>
-                    {errors.password.message}
-                  </p>
-                )}
-
-                <button
-                  type="submit"
-                  onClick={handleSubmit(handleRegister)}
-                  className="contact-btn border rounded-full py-2 px-8 border-solid w-1/2 my-2 font-bold block"
-                  style={{ background: "#93278F", color: "#FFFF" }}
-                >
-                  Sign Up
-                </button>
-                <p className=" w-3/4 text-center mt-10 font-normal text-lg">
+                <div className='row lg:mt-8'>
+                  <div className='col-25'>
+                    <label
+                      htmlFor='password'
+                      className='my-2 p-1 text-base inline-block xl:text-xl'
+                    >
+                      Password:
+                    </label>
+                  </div>
+                  <div className='col-75'>
+                    <input
+                      type={passwordShown ? 'text' : 'password'}
+                      name='password'
+                      id='password'
+                      placeholder='Enter password...'
+                      {...register('password', {
+                        required: 'You must specify a password',
+                        minLength: {
+                          value: 8,
+                          message: 'Password must have at least 8 characters',
+                        },
+                      })}
+                      className='w-full focus:outline-none rounded-full p-3 border border-solid resize-y'
+                      style={{ borderColor: '#93278F', marginLeft: '' }}
+                    />
+                    <i
+                      style={{ margin: '-40px', color: '#93278F' }}
+                      onClick={togglePasswordVisiblity}
+                    >
+                      {eye}
+                    </i>
+                    {errors.password && (
+                      <p className='errorMessage' style={{ color: 'red' }}>
+                        {errors.password.message}
+                      </p>
+                    )}
+                  </div>
+                </div>
+                <div className='row lg:mt-8'>
+                  <button
+                    type='submit'
+                    onClick={handleSubmit(handleRegister)}
+                    className='register-btn border rounded-full py-2 px-8 border-solid w-full my-8 block font-bold sm:float-right lg:w-3/4 xl:w-1/4'
+                    style={{ background: '#93278F', color: '#FFFF' }}
+                  >
+                    Sign Up
+                  </button>
+                </div>
+                <p className='full text-justify font-normal text-xs lg:text-sm xl:text-lg lg:mx-6'>
                   By Clicking the sign up button, you agree with our
-                  <Link className="p-2 terms-conditions font-bold" to="/terms">
+                  <Link className='p-2 terms-conditions font-bold' to='/terms'>
                     Terms and Conditions.
                   </Link>
                 </p>
