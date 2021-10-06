@@ -91,10 +91,10 @@ const Login = () => {
               Welcome back to the women techsters University voting platform.
               Sign in to vote in your preferred candidate.
             </p>
-            <div className=''>
+            <div className='mx-0 xl:mx-auto'>
               <form onSubmit={(e) => e.preventDefault()} className='p-2 mx-2'>
                 <div className='row'>
-                  <div className='col-25'>
+                  <div className='col-25 w-1/4'>
                     <label
                       htmlFor='studentID'
                       className=' my-2 p-1 text-base inline-block xl:text-xl'
@@ -102,7 +102,7 @@ const Login = () => {
                       Student ID:
                     </label>
                   </div>
-                  <div className='col-75'>
+                  <div className='col-75 w-3/4'>
                     <input
                       type='string'
                       name='studentID'
@@ -123,7 +123,7 @@ const Login = () => {
                   </div>
                 </div>
                 <div className='row lg:mt-8'>
-                  <div className='col-25'>
+                  <div className='col-25 w-1/4'>
                     <label
                       htmlFor='password'
                       className='my-2 p-1 text-base inline-block xl:text-xl'
@@ -131,7 +131,7 @@ const Login = () => {
                       Password:
                     </label>
                   </div>
-                  <div className='col-75'>
+                  <div className='col-75 w-3/4'>
                     <input
                       type={passwordShown ? 'text' : 'password'}
                       name='password'
@@ -189,7 +189,7 @@ const Login = () => {
                   <button
                     type='submit'
                     onClick={handleSubmit(handleLogin)}
-                    className='register-btn border rounded-full py-2 px-8 border-solid block w-full mt-0 sm:float-right lg:w-3/4 xl:w-1/4'
+                    className='register-btn border rounded-full py-2 px-6 border-solid block w-full mt-0 sm:float-right lg:w-3/4 xl:w-1/4'
                     style={{ background: '#93278F', color: '#FFFF' }}
                   >
                     Login
